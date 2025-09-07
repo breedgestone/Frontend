@@ -61,11 +61,15 @@
             @update:activeTab="activeTestimonialTab = $event" />
         </div>
         <div class="flex justify-between flex-wrap gap-8 mt-8 text-neutral-4">
-          <swiper :slides-per-view="2" :modules="modules" :space-between="50" :autoplay="{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }">
+          <swiper :breakpoints="{
+            0: { slidesPerView: 1, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 10 },
+
+          }" :slides-per-view="2" :modules="modules" :space-between="50" :autoplay="{
+          delay: 2000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }">
             <swiper-slide v-for="item in testimonials">
               <div class="flex 2xl:flex-row flex-col items-start gap-2">
 
