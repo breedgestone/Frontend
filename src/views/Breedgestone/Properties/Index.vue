@@ -66,14 +66,14 @@
             640: { slidesPerView: 2, spaceBetween: 10 },
 
           }" :slides-per-view="2" :modules="modules" :space-between="50" :autoplay="{
-          delay: 2000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }">
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }">
             <swiper-slide v-for="item in testimonials">
               <div class="flex 2xl:flex-row flex-col items-start gap-2">
 
-                <div class="cursor-pointer rounded-lg  bg-white shadow hover:shadow-lg transition">
+                <div class="cursor-pointer max-w-md w-full  h-[434px] bg-white shadow hover:shadow-lg transition">
                   <div class="relative">
                     <img :src="`/svg/house2.svg`" alt="property.title" class="w-full lg:h-[282px] h-40 object-cover" />
 
@@ -107,9 +107,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="max-w-md bg-primary-0 h-full">
+                <div class="max-w-md flex flex-col gap-2 justify-center w-full p-4 bg-primary-0 sm:h-[434px] h-fit">
                   <StarRating unratedColor="#eee" color="#1C55E0" :modelValue="4" />
-                  <p>The team took time to understand our vision and delivered a sleek, professional site that not only
+                  <p class="sm:text-sm text-xs text-neutral-5">The team took time to understand our vision and delivered
+                    a sleek, professional
+                    site that not only
                     looks great but also improved our conversion rates. Their design process was smooth, communication
                     was
                     clear, and they met all deadlines. We’ve received numerous compliments on the new site, and it’s
