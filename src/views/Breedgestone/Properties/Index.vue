@@ -104,6 +104,7 @@
                   </div>
                 </div>
                 <div class="max-w-md bg-primary-0 h-full">
+                  <StarRating unratedColor="#eee" color="#1C55E0" :modelValue="4" />
                   <p>The team took time to understand our vision and delivered a sleek, professional site that not only
                     looks great but also improved our conversion rates. Their design process was smooth, communication
                     was
@@ -132,6 +133,7 @@ import { dummy } from '../../dummy'
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import Tabs from '@/components/Tabs.vue'
 import PropertyCard from "@/components/PropertyCard.vue"
+import StarRating from '@/components/StarRating.vue'
 const modules = [Navigation, Scrollbar, A11y, Autoplay]
 const router = useRouter()
 const route = useRoute()
