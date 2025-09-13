@@ -67,7 +67,7 @@
             pauseOnMouseEnter: true,
           }">
             <swiper-slide v-for="item in testimonials">
-              <div class="flex items-start gap-2">
+              <div class="flex 2xl:flex-row flex-col items-start gap-2">
 
                 <div class="cursor-pointer rounded-lg  bg-white shadow hover:shadow-lg transition">
                   <div class="relative">
@@ -111,7 +111,15 @@
                     clear, and they met all deadlines. We’ve received numerous compliments on the new site, and it’s
                     easier for customers to navigate. I can confidently say we’ll be working with them again in the
                     future.”</p>
+                  <div>
+                    <img v-if="img" src="" alt="">
+                    <div v-else class="bg-primary-5 w-12 h-12 rounded-full p-2 flex items-center justify-center">
+                      <p class="text-white font-bold">JD</p>
 
+                    </div>
+                    <p class="font-bold text-neutral-5 mt-4">- Jane Doe</p>
+                    <p class="text-xs text-neutral-4">CEO, Company</p>
+                  </div>
                 </div>
               </div>
 
