@@ -30,15 +30,15 @@
           <div
             class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200">
             <router-link to="/properties/rent"
-              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-t-lg">
+              class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-t-lg">
               Rent
             </router-link>
             <router-link to="/properties/buy"
-              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6">
+              class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6">
               Buy
             </router-link>
             <router-link to="/properties/shortlet"
-              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-b-lg">
+              class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-b-lg">
               Shortlet
             </router-link>
           </div>
