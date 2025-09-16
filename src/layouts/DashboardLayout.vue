@@ -1,11 +1,11 @@
 <template>
-    <div class="dashboard-layout">
-        <aside class="sidebar">Sidebar nav</aside>
-        <main class="content">
-            <header>Dashboard Header</header>
-            <router-view />
-        </main>
-    </div>
+  <div class="dashboard-layout">
+    <aside class="sidebar">Sidebar nav</aside>
+    <main class="content">
+      <header>Dashboard Header</header>
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <!-- <style scoped>
