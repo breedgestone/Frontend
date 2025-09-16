@@ -1,23 +1,51 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+// Lazy-loaded Layouts
+const DefaultLayout = () => import('@/layouts/DefaultLayout.vue')
+const AuthLayout = () => import('@/layouts/AuthLayout.vue')
+const DashboardLayout = () => import('@/layouts/DashboardLayout.vue')
+const AdminLayout = () => import('@/layouts/AdminLayout.vue')
+
+// Lazy-loaded Pages
+const Home = () => import('@/views/Breedgestone/HomeView.vue')
+const About = () => import('@/views/Breedgestone/AboutView.vue')
+// const Login = () => import('@/views/Auth/Login.vue')
+// const Register = () => import('@/views/Auth/Register.vue')
+const UserDashboardHome = () => import('@/views/UserDashboard/index.vue')
+const AdminHome = () => import('@/views/Admin/index.vue')
+
+const routes = [
+  {
+    path: '/',
+    component: DefaultLayout,
+    children: [
+      { path: '', name: 'home', component: Home },
+      { path: 'about', name: 'about', component: About },
+    ],
+  },
+  {
+    path: '/auth',
+    component: AuthLayout,
+    children: [
+      // { path: 'login', name: 'login', component: Login },
+      // { path: 'register', name: 'register', component: Register }
+    ],
+  },
+  {
+    path: '/user/dashboard',
+    component: DashboardLayout,
+    children: [{ path: '', name: 'user-dashboard', component: UserDashboardHome }],
+  },
+  {
+    path: '/admin',
+    component: AdminLayout,
+    children: [{ path: '', name: 'admin-dashboard', component: AdminHome }],
+  },
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-  ],
+  history: createWebHistory(),
+  routes,
 })
 
 export default router
