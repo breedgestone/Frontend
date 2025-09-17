@@ -9,6 +9,13 @@ const AdminLayout = () => import('@/layouts/AdminLayout.vue')
 // Lazy-loaded Pages
 const Home = () => import('@/views/Breedgestone/HomeView.vue')
 const About = () => import('@/views/Breedgestone/AboutView.vue')
+const Contact = () => import('@/views/Breedgestone/ContactUs.vue')
+const PropertiesRentHouse = () => import('@/views/Breedgestone/Properties/RentHouse.vue')
+const PropertiesBuyHouse = () => import('@/views/Breedgestone/Properties/BuyHouse.vue')
+const PropertiesShortLet = () => import('@/views/Breedgestone/Properties/Shortlet.vue')
+const Consultations = () => import('@/views/Breedgestone/Consultation.vue')
+const Products = () => import('@/views/Breedgestone/Products.vue')
+const InteriorDesign = () => import('@/views/Breedgestone/InteriorDesign.vue')
 // const Login = () => import('@/views/Auth/Login.vue')
 // const Register = () => import('@/views/Auth/Register.vue')
 const UserDashboardHome = () => import('@/views/UserDashboard/index.vue')
@@ -21,6 +28,13 @@ const routes = [
     children: [
       { path: '', name: 'home', component: Home },
       { path: 'about', name: 'about', component: About },
+      { path: 'contact', name: 'contact', component: Contact },
+      { path: 'properties/rent', name: 'properties-rent', component: PropertiesRentHouse },
+      { path: 'properties/buy', name: 'properties-buy', component: PropertiesBuyHouse },
+      { path: 'properties/shortlet', name: 'properties-shortlet', component: PropertiesShortLet },
+      { path: 'consultations', name: 'consultations', component: Consultations },
+      { path: 'products', name: 'products', component: Products },
+      { path: 'interior-design', name: 'interior-design', component: InteriorDesign },
     ],
   },
   {

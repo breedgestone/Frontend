@@ -3,17 +3,22 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
 
             <!-- Left: Logo -->
-            <div class="flex items-center space-x-2">
+            <button class="hidden md:flex  cursor-pointer items-center space-x-2" @click="router.push('/')">
                 <img src="../../assets/svg/logo.svg" alt="Logo" />
+            </button>
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button aria-label="Open menu">
+                    <img src="../../assets/svg/hamburger.svg" alt="">
+                </button>
             </div>
-
             <!-- Center: Nav Links -->
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-6 items-center">
                 <router-link to="/" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
                 <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">About
                     Us</router-link>
-                <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
-                    Us</router-link>
+                <router-link to="/properties" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
+                </router-link>
 
 
 
@@ -26,6 +31,11 @@
                     class="text-sm font-medium text-neutral-6 hover:text-primary-5">Consultations</router-link>
                 <router-link to="/contact" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Contact
                     Us</router-link>
+            </div>
+            <div class="md:hidden flex ">
+                <p class="capitalize text-sm font-medium text-neutral-6 ">
+                    {{ router.currentRoute.value.name }}
+                </p>
             </div>
 
             <!-- Right: Icons + Sign In -->
@@ -42,20 +52,15 @@
                 </button>
 
                 <!-- Sign In Button -->
-                <B-button @click="router.push('/sign-in')">
-                    Sign In
-                </B-button>
+                <div class="md:flex hidden">
+
+                    <B-button @click="router.push('/sign-in')">
+                        Sign In
+                    </B-button>
+                </div>
             </div>
 
-            <!-- Mobile Hamburger -->
-            <div class="md:hidden">
-                <button aria-label="Open menu">
-                    <svg class="h-6 w-6 text-neutral-6" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
+
 
         </div>
     </nav>
@@ -120,6 +125,14 @@ a {
     /* font-size: 1px; */
     /* line-height: 30px; */
     letter-spacing: 0%;
+
+}
+
+a.router-link-active.router-link-exact-active {
+    background: var(--color-primary-5);
+    color: var(--color-primary-0);
+    padding: 8px 12px;
+    border-radius: 4px;
 
 }
 </style>
