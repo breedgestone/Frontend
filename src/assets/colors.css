@@ -1,0 +1,127 @@
+:root {
+  /* primary */
+  --color-primary-0: #ffffff;
+  --color-primary-0-5: #f1e6fa;
+  --color-primary-1: #e4ccf5;
+  --color-primary-1-5: #d6b3f0;
+  --color-primary-2: #c899eb;
+  --color-primary-3: #ad66e1;
+  --color-primary-4: #9133d7;
+  --color-primary-5: #7600cd;
+  --color-primary-6: #5e00a4;
+  --color-primary-7: #47007b;
+  --color-primary-8: #2f0052;
+  --color-primary-8-5: #23003e;
+  --color-primary-9: #180029;
+  --color-primary-9-5: #0c0015;
+  --color-primary-10: #000000;
+  /* secondary */
+  --color-secondary-0: #ffffff;
+  --color-secondary-0-5: #fffbe6;
+  --color-secondary-1: #fff7cc;
+  --color-secondary-1-5: #fff3b3;
+  --color-secondary-2: #ffef99;
+  --color-secondary-3: #ffe766;
+  --color-secondary-4: #ffdf33;
+  --color-secondary-5: #ffd700;
+  --color-secondary-6: #ccac00;
+  --color-secondary-7: #998100;
+  --color-secondary-8: #665600;
+  --color-secondary-8-5: #4d4100;
+  --color-secondary-9: #332800;
+  --color-secondary-9-5: #1a1600;
+  --color-secondary-10: #000000;
+  /* accent1 */
+  --color-accent1-0: #ffffff;
+  --color-accent1-0-5: #ffeeeb;
+  --color-accent1-1: #ffddd6;
+  --color-accent1-1-5: #ffcdc2;
+  --color-accent1-2: #ffbcad;
+  --color-accent1-3: #ff9a85;
+  --color-accent1-4: #ff799c;
+  --color-accent1-5: #ff5733;
+  --color-accent1-6: #cc4629;
+  --color-accent1-7: #99341f;
+  --color-accent1-8: #662314;
+  --color-accent1-8-5: #4d1a0f;
+  --color-accent1-9: #33110a;
+  --color-accent1-9-5: #1a0905;
+  --color-accent1-10: #000000;
+  /* accent2 */
+  --color-accent2-0: #ffffff;
+  --color-accent2-0-5: #fcf7fc;
+  --color-accent2-1: #f9eff9;
+  --color-accent2-1-5: #f6e7f6;
+  --color-accent2-2: #f3dff3;
+  --color-accent2-3: #ecd0ec;
+  --color-accent2-4: #e6c0e6;
+  --color-accent2-5: #e0b0e0;
+  --color-accent2-6: #b38db3;
+  --color-accent2-7: #868a86;
+  --color-accent2-8: #5a465a;
+  --color-accent2-8-5: #433543;
+  --color-accent2-9: #2d232d;
+  --color-accent2-9-5: #161216;
+  --color-accent2-10: #000000;
+  /* success */
+  --color-success-0-5: #eaf8ec;
+  --color-success-1: #d4edda;
+  --color-success-1-5: #bfe5c7;
+  --color-success-2: #a9dcb5;
+  --color-success-3: #7eca8f;
+  --color-success-4: #53b96a;
+  --color-success-5: #28a745;
+  --color-success-6: #208637;
+  --color-success-7: #186429;
+  --color-success-8: #10431c;
+  --color-success-8-5: #0c3215;
+  --color-success-9: #08210e;
+  --color-success-9-5: #041107;
+  --color-success-10: #000000;
+  /* warning */
+  --color-warning-0-5: #fff1e6;
+  --color-warning-1: #ffe2cc;
+  --color-warning-1-5: #ffd4b3;
+  --color-warning-2: #ffc599;
+  --color-warning-3: #ffa966;
+  --color-warning-4: #ff8c33;
+  --color-warning-5: #ff6f00;
+  --color-warning-6: #cc5900;
+  --color-warning-7: #994300;
+  --color-warning-8: #662c00;
+  --color-warning-8-5: #4d2100;
+  --color-warning-9: #331600;
+  --color-warning-9-5: #1a0b00;
+  --color-warning-10: #000000;
+  /* error */
+  --color-error-0-5: #fcebec;
+  --color-error-1: #f8d7da;
+  --color-error-1-5: #f5c2c7;
+  --color-error-2: #f1aeb5;
+  --color-error-3: #ea868f;
+  --color-error-4: #e35d6a;
+  --color-error-5: #dc3545;
+  --color-error-6: #b02a37;
+  --color-error-7: #842029;
+  --color-error-8: #58151c;
+  --color-error-8-5: #421015;
+  --color-error-9: #2c0b0e;
+  --color-error-9-5: #160507;
+  --color-error-10: #000000;
+
+  /* neutral */
+  --color-neutral-0-5: #ebebeb;
+  --color-neutral-1: #d6d6d6;
+  --color-neutral-1-5: #c2c2c2;
+  --color-neutral-2: #adadad;
+  --color-neutral-3: #858585;
+  --color-neutral-4: #5c5c5c;
+  --color-neutral-5: #333333;
+  --color-neutral-6: #292929;
+  --color-neutral-7: #1f1f1f;
+  --color-neutral-8: #141414;
+  --color-neutral-8-5: #0f0f0f;
+  --color-neutral-9: #0a0a0a;
+  --color-neutral-9-5: #050505;
+  --color-neutral-10: #000000;
+}

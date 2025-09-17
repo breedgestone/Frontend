@@ -4,8 +4,7 @@
 
             <!-- Left: Logo -->
             <div class="flex items-center space-x-2">
-                <img src="" alt="Logo" class="h-6 w-6" />
-                <span class="text-lg font-bold text-neutral-8">Breedestone</span>
+                <img src="../../assets/svg/logo.svg" alt="Logo" />
             </div>
 
             <!-- Center: Nav Links -->
@@ -13,11 +12,10 @@
                 <router-link to="/" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
                 <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">About
                     Us</router-link>
+                <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
+                    Us</router-link>
 
-                <!-- Properties Dropdown Placeholder -->
-                <button class="px-3 py-1.5 text-sm font-medium text-white rounded-md bg-primary-5">
-                    Properties <span class="ml-1">▼</span>
-                </button>
+
 
                 <router-link to="/products"
                     class="text-sm font-medium text-neutral-6 hover:text-primary-5">Products</router-link>
@@ -34,28 +32,19 @@
             <div class="flex items-center space-x-4">
                 <!-- Wishlist Icon -->
                 <button aria-label="Wishlist">
-                    <svg class="h-5 w-5 text-neutral-4 hover:text-neutral-6" fill="none" stroke="currentColor"
-                        stroke-width="2" viewBox="0 0 24 24">
-                        <path
-                            d="M12 21C12 21 4 13.5 4 8.5C4 6 6 4 8.5 4C10.1 4 11.5 5 12 6C12.5 5 13.9 4 15.5 4C18 4 20 6 20 8.5C20 13.5 12 21 12 21Z" />
-                    </svg>
+                    <img src="../../assets/svg/ash-heart-light.svg" alt="">
+
                 </button>
 
                 <!-- Cart Icon -->
                 <button aria-label="Cart">
-                    <svg class="h-5 w-5 text-neutral-4 hover:text-neutral-6" fill="none" stroke="currentColor"
-                        stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M6 6H21L20 14H8L6 6ZM6 6L5 2H2" />
-                        <circle cx="9" cy="20" r="1" />
-                        <circle cx="17" cy="20" r="1" />
-                    </svg>
+                    <img src="../../assets/svg/ash-cart-light.svg" alt="">
                 </button>
 
                 <!-- Sign In Button -->
-                <router-link to="/sign-in"
-                    class="px-4 py-1.5 text-sm font-medium text-white rounded-md bg-primary-5 hover:bg-primary-6">
+                <B-button @click="router.push('/sign-in')">
                     Sign In
-                </router-link>
+                </B-button>
             </div>
 
             <!-- Mobile Hamburger -->
@@ -73,7 +62,9 @@
 </template>
 
 <script setup>
-// No script logic yet — optionally handle dropdown or mobile menu toggling here.
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 </script>
 
 <style scoped>
@@ -120,5 +111,15 @@
 
 .border-neutral-1 {
     border-color: var(--color-neutral-1);
+}
+
+router-link,
+a {
+    font-family: "Campton", sans-serif;
+    font-weight: 600;
+    /* font-size: 1px; */
+    /* line-height: 30px; */
+    letter-spacing: 0%;
+
 }
 </style>
