@@ -1,25 +1,25 @@
 <script setup></script>
 
 <template>
-  <div class="font-poppins text-neutral-9">
+  <div>
 
     <!-- Hero Section -->
-    <section class="bg-neutral-8 py-12">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-            Africa’s Trusted Hub for Living and Building
+    <section class="bg-[#F7F7FD] min-h-[80vh] bg-center bg-no-repeat relative lg:bg-cover lg:bg-[url('/hero.png')]">
+
+      <!-- Optional overlay for better text readability -->
+      <div class=""></div>
+
+      <div class="relative z-10 flex items-center min-h-[60vh] px-4 md:px-12">
+        <div class="md:w-1/2 py-10">
+          <h1 class="sm:text-2xl md:text-5xl font-bold leading-tight">
+            Africa's Trusted Hub for Living and Building
           </h1>
-          <p class="mt-4 text-neutral-2">
-            Short description about the platform and its offerings.
+          <p class="mt-4 text-neutral-5 font-poppins md:text-xl xl:text-2xl text-lg">
+            A one-stop lifestyle marketplace redefining how Nigerians and Africans find, furnish, and build their homes.
           </p>
           <button class="mt-6 px-6 py-3 bg-color-primary-5 hover:bg-color-primary-4 text-white rounded-lg">
             Get Started
           </button>
-        </div>
-        <div>
-          <img alt="Hero section house illustration / map placeholder"
-            class="w-full border rounded-lg bg-neutral-7 h-64">
         </div>
       </div>
     </section>
@@ -27,12 +27,14 @@
     <!-- Trusted Companies -->
     <section class="py-8 bg-white">
       <div class="max-w-7xl mx-auto px-6 text-center">
-        <p class="font-semibold">Many Companies Trust Breedgestone</p>
-        <div class="flex justify-center flex-wrap gap-8 mt-6 text-neutral-4">
-          <span>Logo placeholder 1</span>
-          <span>Logo placeholder 2</span>
-          <span>Logo placeholder 3</span>
-          <span>Logo placeholder 4</span>
+        <p class="font-campton font-bold 2xl:text-4xl xl:text-3xl md:text-2xl text-xl">Many Companies Trust Breedgestone
+        </p>
+        <div class="flex justify-between flex-wrap gap-8 mt-6 text-neutral-4">
+          <img src="../../assets/svg/notion.svg" alt="">
+          <img src="../../assets/svg/notion.svg" alt="">
+          <img src="../../assets/svg/notion.svg" alt="">
+          <img src="../../assets/svg/notion.svg" alt="">
+
         </div>
       </div>
     </section>
@@ -161,3 +163,8 @@
 
   </div>
 </template>
+
+<script setup>
+
+</script>
+<style scoped></style>
