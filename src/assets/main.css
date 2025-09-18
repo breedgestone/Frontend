@@ -8,12 +8,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-button {
-  font-family: Poppins;
-}
 .font-campton {
   font-family: 'Campton', sans-serif;
 }
-.font-poppins {
+* {
   font-family: 'Poppins', sans-serif;
 }
