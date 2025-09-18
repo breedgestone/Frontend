@@ -1,13 +1,13 @@
 <template>
   <div class="font-poppins text-neutral-9">
-
     <!-- Our Journey -->
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold">Our Journey</h2>
           <p class="mt-4 text-neutral-3">
-            Quick intro about Breedgestone’s growth, achievements, and values in the real estate and construction space.
+            Quick intro about Breedgestone’s growth, achievements, and values in the real estate and
+            construction space.
           </p>
           <div class="flex gap-6 mt-8">
             <div class="text-center">
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div>
-          <img alt="Hand holding house illustration" class="w-full h-72 rounded-lg bg-neutral-7">
+          <img alt="Hand holding house illustration" class="w-full h-72 rounded-lg bg-neutral-7" />
         </div>
       </div>
     </section>
@@ -45,11 +45,15 @@
           </div>
           <div class="bg-neutral-8 p-6 rounded-lg">
             <h3 class="font-semibold">Ownership First</h3>
-            <p class="mt-2 text-neutral-3">We empower people to invest, build, and grow responsibly.</p>
+            <p class="mt-2 text-neutral-3">
+              We empower people to invest, build, and grow responsibly.
+            </p>
           </div>
           <div class="bg-neutral-8 p-6 rounded-lg">
             <h3 class="font-semibold">Excellence in Experience</h3>
-            <p class="mt-2 text-neutral-3">Delivering seamless journeys in real estate and building.</p>
+            <p class="mt-2 text-neutral-3">
+              Delivering seamless journeys in real estate and building.
+            </p>
           </div>
         </div>
       </div>
@@ -62,7 +66,9 @@
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-neutral-1 p-6 rounded-lg">
             <h3 class="font-semibold">35+ Years of Excellence</h3>
-            <p class="mt-2 text-neutral-3">Consistently delivering trusted solutions in real estate.</p>
+            <p class="mt-2 text-neutral-3">
+              Consistently delivering trusted solutions in real estate.
+            </p>
           </div>
           <div class="bg-neutral-1 p-6 rounded-lg">
             <h3 class="font-semibold">Happy Clients</h3>
@@ -70,7 +76,9 @@
           </div>
           <div class="bg-neutral-1 p-6 rounded-lg">
             <h3 class="font-semibold">Industry Recognition</h3>
-            <p class="mt-2 text-neutral-3">Awards and mentions for our outstanding contributions.</p>
+            <p class="mt-2 text-neutral-3">
+              Awards and mentions for our outstanding contributions.
+            </p>
           </div>
         </div>
       </div>
@@ -87,11 +95,13 @@
           <div class="mt-6 space-y-4">
             <p><span class="font-bold text-color-primary-5">74%</span> Property Sold Rate</p>
             <p><span class="font-bold text-color-primary-5">3,856</span> Properties for Sale</p>
-            <p><span class="font-bold text-color-primary-5">2,540</span> Daily Completed Transactions</p>
+            <p>
+              <span class="font-bold text-color-primary-5">2,540</span> Daily Completed Transactions
+            </p>
           </div>
         </div>
         <div>
-          <img alt="House illustration placeholder" class="w-full h-72 bg-neutral-7 rounded-lg">
+          <img alt="House illustration placeholder" class="w-full h-72 bg-neutral-7 rounded-lg" />
         </div>
       </div>
     </section>
@@ -126,12 +136,18 @@
         <h2 class="text-3xl font-bold text-center mb-12">Our Team Members</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div class="text-center">
-            <img alt="Team member placeholder" class="w-24 h-24 mx-auto rounded-full bg-neutral-7">
+            <img
+              alt="Team member placeholder"
+              class="w-24 h-24 mx-auto rounded-full bg-neutral-7"
+            />
             <p class="mt-4 font-semibold">Jenny Wilson</p>
             <p class="text-sm text-neutral-3">CEO</p>
           </div>
           <div class="text-center">
-            <img alt="Team member placeholder" class="w-24 h-24 mx-auto rounded-full bg-neutral-7">
+            <img
+              alt="Team member placeholder"
+              class="w-24 h-24 mx-auto rounded-full bg-neutral-7"
+            />
             <p class="mt-4 font-semibold">Bradley Simmons</p>
             <p class="text-sm text-neutral-3">CTO</p>
           </div>
@@ -154,11 +170,10 @@
           </div>
         </div>
         <div>
-          <img alt="Mobile app mockup placeholder" class="w-full h-72 bg-neutral-7 rounded-lg">
+          <img alt="Mobile app mockup placeholder" class="w-full h-72 bg-neutral-7 rounded-lg" />
         </div>
       </div>
     </section>
-
   </div>
 </template>
 

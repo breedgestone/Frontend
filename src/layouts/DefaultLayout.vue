@@ -1,16 +1,16 @@
 <template>
-    <div class="flex flex-col min-h-screen">
-        <!-- Navbar -->
-        <Navbar />
+  <div class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <Navbar />
 
-        <!-- Main Content -->
-        <main class="flex-grow">
-            <router-view />
-        </main>
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <router-view />
+    </main>
 
-        <!-- Footer -->
-        <Footer />
-    </div>
+    <!-- Footer -->
+    <Footer />
+  </div>
 </template>
 
 <script setup>
