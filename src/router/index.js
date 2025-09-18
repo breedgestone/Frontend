@@ -13,6 +13,7 @@ const Contact = () => import('@/views/Breedgestone/ContactUs.vue')
 const PropertiesRentHouse = () => import('@/views/Breedgestone/Properties/RentHouse.vue')
 const PropertiesBuyHouse = () => import('@/views/Breedgestone/Properties/BuyHouse.vue')
 const PropertiesShortLet = () => import('@/views/Breedgestone/Properties/Shortlet.vue')
+const Properties = () => import('@/views/Breedgestone/Properties/Index.vue')
 const Consultations = () => import('@/views/Breedgestone/Consultation.vue')
 const Products = () => import('@/views/Breedgestone/Products.vue')
 const InteriorDesign = () => import('@/views/Breedgestone/InteriorDesign.vue')
@@ -29,12 +30,13 @@ const routes = [
       { path: '', name: 'home', component: Home },
       { path: 'about', name: 'about', component: About },
       { path: 'contact', name: 'contact', component: Contact },
+      { path: 'properties', name: 'properties', component: Properties },
       { path: 'properties/rent', name: 'properties-rent', component: PropertiesRentHouse },
       { path: 'properties/buy', name: 'properties-buy', component: PropertiesBuyHouse },
       { path: 'properties/shortlet', name: 'properties-shortlet', component: PropertiesShortLet },
       { path: 'consultations', name: 'consultations', component: Consultations },
       { path: 'products', name: 'products', component: Products },
-      { path: 'interior-design', name: 'interior-design', component: InteriorDesign },
+      { path: 'interior-design', name: 'interior design', component: InteriorDesign },
     ],
   },
   {

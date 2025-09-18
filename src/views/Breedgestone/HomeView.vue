@@ -18,7 +18,8 @@
           </button>
         </div>
         <div>
-          <img alt="Hero section house illustration / map placeholder" class="w-full rounded-lg bg-neutral-7 h-64">
+          <img alt="Hero section house illustration / map placeholder"
+            class="w-full border rounded-lg bg-neutral-7 h-64">
         </div>
       </div>
     </section>
@@ -67,7 +68,7 @@
             </div>
           </div>
           <div class="bg-neutral-7 rounded-lg overflow-hidden">
-            <img alt="Property image placeholder" class="w-full h-40 bg-neutral-6">
+            <img alt="Property image placeholder" class=" border w-full h-40 bg-neutral-6">
             <div class="p-4">
               <p class="font-semibold">Property title</p>
               <p class="text-sm text-neutral-3">Price / details</p>
@@ -84,7 +85,7 @@
         <h2 class="text-2xl font-bold mb-6">Materials That Make Spaces</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           <div class="bg-white rounded-lg p-4 shadow">
-            <img alt="Material image placeholder" class="w-full h-32 bg-neutral-6">
+            <img alt="Material image placeholder" class="w-full h-32 border bg-neutral-6">
             <p class="mt-3 text-sm">Category</p>
           </div>
           <!-- Repeat cards -->
@@ -119,7 +120,7 @@
           </button>
         </div>
         <div>
-          <img alt="Designer chair placeholder" class="w-full h-64 bg-neutral-7 rounded-lg">
+          <img alt="Designer chair placeholder" class="w-full h-64 bg-neutral-7 border rounded-lg">
         </div>
       </div>
     </section>
@@ -153,7 +154,7 @@
           </button>
         </div>
         <div>
-          <img alt="Mobile app mockup placeholder" class="w-full h-64 bg-neutral-7 rounded-lg">
+          <img alt="Mobile app mockup placeholder" class="w-full border h-64 bg-neutral-7 rounded-lg">
         </div>
       </div>
     </section>
