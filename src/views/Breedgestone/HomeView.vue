@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sm:bg-primary-0 bg-[#F9F9F9]">
     <!-- Hero Section -->
     <section class="bg-[#F7F7FD]">
       <div
@@ -69,7 +69,7 @@
 
     <!-- Trusted Companies -->
     <section class="py-8 bg-white">
-      <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="max-w-7xl mx-auto md:px-12 px-4 text-center">
         <h2 class=" font-bold font-campton lg:text-3xl xl:text-4xl text-2xl">
           Many Companies Trust Breedgestone
         </h2>
@@ -94,7 +94,7 @@
 
     <!-- Services -->
     <section class="py-16 bg-neutral-8">
-      <div class="max-w-7xl mx-auto px-6 text-primary-0">
+      <div class="max-w-7xl mx-auto md:px-12 px-4 text-primary-0">
         <img src="../../assets/svg/three-yellow-stars.svg" alt="breedgestone three yellow stars" />
         <div class="flex md:flex-row flex-col w-full justify-between gap-3 mt-8">
           <h3 class="font-bold max-w-[700px] font-campton lg:text-3xl xl:text-4xl text-2xl">
@@ -152,28 +152,19 @@
 
     <!-- Properties Section -->
     <section class="py-16 bg-[#F9F9F9]">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto md:px-12 px-4">
         <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mb-6">Based on Your Need</h2>
 
         <!-- Tabs -->
         <div class="flex sm:flex-row mb-6 gap-3 flex-col-reverse sm:justify-between justify-center">
 
-          <div
-            class="flex flex-wrap gap-4 bg-primary-0-5/50 px-4 py-2 rounded-lg w-fit focus:border-primary-0-5/50 focus:ring-primary-0-5/50 ">
-            <button v-for="tab in tabs" :key="tab" @click="activeTab = tab" :class="[
-              'sm:px-5 px-3 py-2 rounded-[6px] font-medium transition',
-              activeTab === tab
-                ? 'bg-primary-0 text-neutral-5 border-primary-3 shadow-lg shadow-primary-0-5  border-2'
-                : 'text-neutral-7  hover:bg-primary-0-5',
-            ]">
-              {{ tab }}
-            </button>
-          </div>
+          <Tabs :tabs="tabs" :activeTab="activeTab" @update:activeTab="activeTab = $event" />
+
           <input class=" rounded-lg border-neutral-2 border-2 p-4" type="search" placeholder="search" name="" id="">
         </div>
 
         <!-- Grid -->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6 font-poppins">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 font-poppins">
           <PropertyCard @click="clicked(property.id)" v-for="property in filteredProperties" :key="property.id"
             :property="property" />
 
@@ -190,8 +181,9 @@
 
     <!-- Materials -->
     <section class="py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mb-1">Materials That Make Spaces</h2>
+      <div class="max-w-7xl mx-auto md:px-12 px-4 ">
+        <img src="../../assets/svg/three-yellow-stars-white-bg.svg" alt="breedgestone three yellow stars" />
+        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold my-1">Materials That Make Spaces</h2>
         <p class="font-poppins text-neutral-4 lg:text-lg mb-6">Whether you’re building from the ground up or finishing
           with décor, we
           supply
@@ -242,17 +234,17 @@
           <!-- Repeat cards -->
         </div>
         <div class="flex xl:flex-nowrap flex-wrap gap-8 mt-8 w-full">
-          <div class="flex font-poppins flex-col gap-8 w-full md:flex-row">
+          <div class="flex  font-poppins flex-col gap-8 w-full md:flex-row">
             <!-- Hot Deals -->
             <div class="flex-1">
-              <h3 class="font-bold font-campton  text-xl mb-4">Hot Deals</h3>
+              <h3 class="font-semibold text-neutral-5 font-campton  text-xl mb-4">Hot Deals</h3>
               <div class="flex flex-col gap-6">
                 <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
                   <img src="/public/svg/hotdeals.svg" alt="Emerald Oasis" class="w-24 h-24 object-cover rounded-lg" />
                   <div>
-                    <p class="font-poppins text-sm text-neutral-700">Emerald Oasis</p>
-                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
-                    <star-rating :modelValue="4" />
+                    <p class="font-poppins text-xs text-neutral-700">Emerald Oasis</p>
+                    <p class=" text-neutral-900">₦85,000.00</p>
+                    <star-rating size="sm" :modelValue="4" />
                   </div>
                 </div>
 
@@ -260,14 +252,14 @@
             </div>
             <!-- Best Seller -->
             <div class="flex-1">
-              <h3 class="font-bold  font-campton text-xl mb-4">Best Seller</h3>
+              <h3 class="font-semibold text-neutral-5  font-campton text-xl mb-4">Best Seller</h3>
               <div class="flex flex-col gap-6">
                 <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
                   <img src="/public/svg/bestseller.svg" alt="Royal Velvet" class="w-24 h-24 object-cover rounded-lg" />
                   <div>
                     <p class="font-poppins text-sm text-neutral-700">Royal Velvet</p>
-                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
-                    <star-rating :modelValue="4" />
+                    <p class=" text-neutral-900">₦85,000.00</p>
+                    <star-rating size="sm" :modelValue="4" />
                   </div>
                 </div>
 
@@ -275,14 +267,14 @@
             </div>
             <!-- Top Rated -->
             <div class="flex-1">
-              <h3 class="font-bold font-campton  text-xl mb-4">Top Rated</h3>
+              <h3 class="font-semibold text-neutral-5 font-campton  text-xl mb-4">Top Rated</h3>
               <div class="flex flex-col gap-6">
                 <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
                   <img src="/public/svg/topRated.svg" alt="Giant Rustic" class="w-24 h-24 object-cover rounded-lg" />
                   <div>
                     <p class="font-poppins text-sm text-neutral-700">Giant Rustic</p>
-                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
-                    <star-rating :modelValue="4" />
+                    <p class=" text-neutral-900">₦85,000.00</p>
+                    <star-rating size="sm" :modelValue="4" />
                   </div>
                 </div>
 
@@ -298,66 +290,243 @@
 
     <!-- Highlight Section -->
     <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img alt="Featured property image placeholder" class="w-full h-64 bg-neutral-7 rounded-lg" />
+      <div class="max-w-7xl mx-auto md:px-12 px-4 flex flex-wrap gap-16 items-center">
+        <div class="2xl:w-[619px] md:w-[500px] w-full relative">
+          <div
+            class="absolute sm:w-[400px] max-w-[340px] bg-primary-0 rounded-lg p-4 -translate-y-1/2 top-1/2 shadow-xl -left-6 flex items-center gap-4">
+            <img class="sm:w-fit w-[48px] " src="../../assets/svg/yellowMediaIcon.svg" alt="">
+            <div>
+              <h5 class="font-campton font-semibold text-lg">Virtual Home tour</h5>
+              <p class="text-neutral-5 text-sm font-poppins">We provide you with virtual tour with HD video walkthroughs
+              </p>
+            </div>
+          </div>
+          <img src="../../assets/svg/designHouse.svg" alt="Featured property image placeholder"
+            class="w-full  rounded-lg" />
+          <div
+            class=" absolute sm:w-90 w-3/4 bg-primary-0 rounded-lg p-4 shadow-xl flex items-center gap-4 left-1/2 -translate-x-1/2 bottom-[-40px]">
+            <img class="sm:w-fit w-[48px] absolute top-0 right-4 -translate-y-1/2"
+              src="../../assets/svg/purpleHouse.svg" alt="">
+            <div>
+              <h5 class="font-campton font-semibold text-lg">Find the best Deal</h5>
+              <p class="text-neutral-5 text-sm font-poppins">
+                Browse thousands of properties
+              </p>
+            </div>
+          </div>
         </div>
         <div>
-          <h2 class="text-2xl font-bold">Find the Perfect Home to Own</h2>
-          <p class="mt-4 text-neutral-3">Details about the feature.</p>
-          <button class="mt-6 px-6 py-3 bg-color-primary-5 text-white rounded-lg hover:bg-color-primary-4">
-            Learn More
-          </button>
+          <Tabs :tabs="buyOrSell" :activeTab="activeTabForBuyOrSell"
+            @update:activeTab="activeTabForBuyOrSell = $event" />
+          <div v-if="activeTabForBuyOrSell === 'House To Buy'">
+
+            <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl sm:text-left text-center font-bold mt-6">Find the
+              Perfect Home to Own</h2>
+            <p class="mt-2 sm:text-left text-center max-w-xl mb-4 text-neutral-4">Discover verified properties with
+              transparent pricing and
+              secure
+              payments,
+              making homeownership simple and trustworthy.</p>
+            <div class="p-4 max-w-xl rounded-lg bg-[#FFFBE5] mb-4">
+              <div class="flex flex-col gap-4 font-poppins">
+                <div class="flex flex-col sm:flex-row items-start  gap-2">
+                  <img class="w-8 sm:w-fit" src="../../assets/svg/duotone.svg" alt="">
+                  <div>
+                    <h4 class="font-[500] text-neutral-900">Step Into Brand New Living</h4>
+                    <p class="text-neutral-9/60 text-sm mt-1">Explore modern houses built to today’s standards, ready
+                      for
+                      you to
+                      move in
+                      with confidence,
+                      comfort, and style for your future.</p>
+                  </div>
+                </div>
+                <div class="border border-neutral-9/10 w-3/4"></div>
+                <div class="flex flex-col sm:flex-row items-start  gap-2">
+                  <img class="w-8 sm:w-fit" src="../../assets/svg/duotoneCpu.svg" alt="">
+                  <div>
+                    <h4 class="font-[500] text-neutral-9">Find Value in Established Homes</h4>
+                    <p class="text-neutral-9/60 text-sm mt-1">Choose from trusted, well-kept properties that balance
+                      affordability, comfort, and convenience, offering character and value for every discerning buyer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl sm:text-left text-center font-bold mt-6">Rent
+              Smarter, Live Better</h2>
+            <p class="mt-2 sm:text-left text-center max-w-xl mb-4 text-neutral-4">Browse trusted rental listings,
+              connect with verified agents,
+              and move in with ease and peace of mind.</p>
+            <div class="p-4 max-w-xl rounded-lg bg-[#FFFBE5] mb-4">
+              <div class="flex flex-col gap-4 font-poppins">
+                <div class="flex flex-col sm:flex-row items-start  gap-2">
+                  <img class="w-8 sm:w-fit" src="../../assets/svg/duotone.svg" alt="">
+                  <div>
+                    <h4 class="font-[500] text-neutral-900">Flexibility for Every Season</h4>
+                    <p class="text-neutral-9/60 text-sm mt-1">Perfect for students, travelers, or temporary stays — find
+                      rentals that match your timeline, lifestyle, and budget with ease and flexibility.</p>
+                  </div>
+                </div>
+                <div class="border border-neutral-9/10 w-3/4"></div>
+                <div class="flex  flex-col sm:flex-row items-start  gap-2">
+                  <img class="w-8 sm:w-fit" src="../../assets/svg/duotoneCpu.svg" alt="">
+                  <div>
+                    <h4 class="font-[500] text-neutral-9">Settle In With Peace of Mind</h4>
+                    <p class="text-neutral-9/60 text-sm mt-1">Discover reliable, long-term housing with secure
+                      agreements and transparent payments, designed to provide peace, stability, and comfort for growing
+                      families.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <B-button size="xl" variant="outline" @click="router.push('/properties')">Browse More Properties</B-button>
         </div>
       </div>
     </section>
 
     <!-- Designer Spaces -->
-    <section class="py-16 bg-neutral-1">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl font-bold">Get a Designer Space You’ll Love</h2>
-          <p class="mt-4 text-neutral-3">Details about design services.</p>
-          <button class="mt-6 px-6 py-3 bg-color-primary-5 text-white rounded-lg hover:bg-color-primary-4">
-            Explore Designs
-          </button>
-        </div>
-        <div>
-          <img alt="Designer chair placeholder" class="w-full h-64 bg-neutral-7 border rounded-lg" />
+    <section class="py-16 bg-primary-0">
+      <div class="max-w-7xl mx-auto md:px-12 px-4">
+        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mt-1 mb-2">
+          Get a Designer Space You'll Love
+        </h2>
+        <p class="mt-2 text-neutral-3 mb-8">
+          From elegant furnishings to thoughtful finishes, we bring beauty, comfort, and function together—tailored just
+          for you
+        </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <!-- Left: Card with image and CTA -->
+          <div class="bg-[#F7F7FD] text-center rounded-xl border border-[#E0DEF7] p-8 flex flex-col items-start">
+            <h3 class="font-campton font-semibold text-xl mb-2 text-neutral-9">Concepts from multiple top designers</h3>
+            <p class="mb-6 text-neutral-4 text-base text-center md:text-left">
+              Get award-winning personalized interior design help
+            </p>
+            <B-button size="lg">
+              Browse Properties
+            </B-button>
+            <img src="../../assets/svg/designer-lamp.svg" alt="Designer lamp" class="w-full max-w-xs mb-0" />
+          </div>
+          <!-- Right: Features Grid -->
+          <div class="grid text-center sm:text-left xl:grid-cols-2 grid-cols-1 gap-8">
+            <div class="flex flex-col xl:flex-row items-center sm:items-start gap-4 w-full ">
+              <img src="../../assets/svg/save-money.svg" alt="Save Money" class="w-10 h-10" />
+              <div>
+                <h4 class="font-semibold text-neutral-9 mb-1">Save Money</h4>
+                <p class="text-neutral-4 text-sm">
+                  With access to trusted suppliers and smart design solutions, we help you avoid costly mistakes and get
+                  more value for your budget.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col xl:flex-row items-center sm:items-start gap-4 w-full">
+              <img src="../../assets/svg/save-time.svg" alt="Save Time" class="w-10 h-10" />
+              <div>
+                <h4 class="font-semibold text-neutral-9 mb-1">Save Time</h4>
+                <p class="text-neutral-4 text-sm">
+                  Our experts manage the entire design and furnishing process—so you don’t have to spend months figuring
+                  it out yourself.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col xl:flex-row items-center sm:items-start gap-4 w-full">
+              <img src="../../assets/svg/invest-style.svg" alt="Investment in Comfort & Style" class="w-10 h-10" />
+              <div>
+                <h4 class="font-semibold text-neutral-9 mb-1">An Investment in Comfort & Style</h4>
+                <p class="text-neutral-4 text-sm">
+                  Professional design isn’t just decoration—it’s lasting value, crafted spaces, and a home you’ll truly
+                  love.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col xl:flex-row items-center sm:items-start gap-4 w-full">
+              <img src="../../assets/svg/convenient.svg" alt="Convenient & Stress Free" class="w-10 h-10" />
+              <div>
+                <h4 class="font-semibold text-neutral-9 mb-1">Convenient & Stress Free</h4>
+                <p class="text-neutral-4 text-sm">
+                  From concept to setup, we handle everything—delivering a beautiful, ready-to-enjoy space without the
+                  hassle.
+                </p>
+              </div>
+            </div>
+            <div class="xl:col-span-2 flex justify-center mt-2 w-full">
+              <B-button size="xl" variant="outline">
+                Start My Transformation
+
+              </B-button>
+
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          <details class="p-4 bg-neutral-1 rounded-lg">
-            <summary class="font-semibold cursor-pointer">How does it work?</summary>
-            <p class="mt-2 text-neutral-3">Answer goes here.</p>
-          </details>
-          <details class="p-4 bg-neutral-1 rounded-lg">
-            <summary class="font-semibold cursor-pointer">Is Breedgestone affordable?</summary>
-            <p class="mt-2 text-neutral-3">Answer goes here.</p>
-          </details>
-          <!-- More FAQs -->
+      <div class="max-w-7xl mx-auto md:px-12 px-4">
+        <p class="font-semibold text-center text-neutral-9 uppercase mb-2 tracking-wide">
+          GET ALL THE ANSWERS TO YOUR QUESTIONS
+        </p>
+        <h2 class="font-campton text-center lg:text-3xl xl:text-4xl text-2xl font-bold mb-8">
+          Frequently Asked Questions
+        </h2>
+        <div class="w-full flex flex-col xl:flex-row xl:gap-12 gap-6 items-center xl:items-start justify-center">
+          <!-- FAQ List -->
+          <div class="w-full xl:w-1/2 flex flex-col gap-4">
+            <FaqAccordion v-for="(faq, i) in faqs.slice(0, Math.ceil(faqs.length / 2))" :key="faq.question" :faq="faq"
+              :active="activeFaq === i" @toggle="activeFaq = activeFaq === i ? null : i" />
+          </div>
+          <div class="w-full xl:w-1/2 flex flex-col gap-4">
+            <FaqAccordion v-for="(faq, i) in faqs.slice(Math.ceil(faqs.length / 2))" :key="faq.question" :faq="faq"
+              :active="activeFaq === i + Math.ceil(faqs.length / 2)"
+              @toggle="activeFaq = activeFaq === i + Math.ceil(faqs.length / 2) ? null : i + Math.ceil(faqs.length / 2)" />
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Mobile App CTA -->
-    <section class="py-16 bg-neutral-1">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl font-bold">Enjoy All the Benefits from Our MobileApp</h2>
-          <p class="mt-4 text-neutral-3">Download and enjoy features.</p>
-          <button class="mt-6 px-6 py-3 bg-color-primary-5 text-white rounded-lg hover:bg-color-primary-4">
-            Download Now
-          </button>
-        </div>
-        <div>
-          <img alt="Mobile app mockup placeholder" class="w-full border h-64 bg-neutral-7 rounded-lg" />
+    <section class="py-16 bg-[#FFFBE5]">
+      <div class="max-w-7xl mx-auto md:px-12 px-4 ">
+        <p class="mb-2 uppercase  text-neutral-7 font-campton font-semibold">
+          Discover, design and deal in one app
+        </p>
+        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mb-8 ">Enjoy All the Benefits from Our
+          MobileApp</h2>
+        <div class="grid bg-primary-0 sm:p-8 p-4 rounded-lg md:grid-cols-2 gap-8 items-center">
+          <div>
+
+            <div
+              class="rounded-3xl uppercase px-3 bg-secondary-5 text-primary-5 font-campton font-bold max-w-[167px] flex items-center justify-center py-2">
+              coming soon
+            </div>
+            <h4 class="mt-8 font-campton text-neutral-5 font-semibold">
+              Download our app
+            </h4>
+            <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold my-2 ">The Marketplace That Fits in Your
+              Pocket</h2>
+            <p class="max-w-[500px] text-neutral-2">Download our mobile app today to access secure payments, exclusive
+              offers, and
+              smarter tools — everything
+              you need, right at your fingertips.</p>
+            <div>
+              <div class="flex gap-4 mt-6">
+                <button class="hover:scale-105 transition-transform !cursor-not-allowed" disabled>
+                  <img src="../../assets/svg/googlebtn.svg" alt="">
+                </button>
+                <button class="hover:scale-105 transition-transform !cursor-not-allowed" disabled>
+                  <img src="../../assets/svg/applebutton.svg" alt="">
+                </button>
+
+              </div>
+            </div>
+          </div>
+          <div>
+            <img alt="Mobile app mockup placeholder" src="../../assets/svg/mobile.svg" class="w-full" />
+          </div>
         </div>
       </div>
     </section>
@@ -368,24 +537,27 @@
 import { ref, computed } from 'vue'
 import StarRating from '@/components/StarRating.vue'
 import PropertyCard from "@/components/PropertyCard.vue"
+import Tabs from '@/components/Tabs.vue'
 
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import { useRouter } from 'vue-router'
+import FaqAccordion from '@/components/FaqAccordion.vue'
 const router = useRouter()
 const modules = [Navigation, Scrollbar, A11y, Autoplay]
 
 const onSwiper = (swiper) => {
-  console.log(swiper)
+  // console.log(swiper)
 }
 const onSlideChange = () => {
-  console.log('slide change')
+  // console.log('slide change')
 }
 const clicked = (id) => {
   router.push({ name: 'productDetails', params: { id } })
 }
 const activeTab = ref('Rent')
 const tabs = ['Purchase', 'Rent', 'Shortlet']
-
+const buyOrSell = ["House To Buy", "House To Sell"]
+const activeTabForBuyOrSell = ref('House To Buy')
 const location = ref('')
 const moveInDate = ref('')
 const allProperties = ref([
@@ -462,12 +634,43 @@ const allProperties = ref([
     size: "3x5 m²",
   },
 ])
-const filteredProperties = computed(() => {
-  console.log("Filtering properties for tab:", activeTab.value, allProperties.value);
+const faqs = [
+  {
+    question: "How do you ensure trust?",
+    answer: "Breedgestone builds trust by verifying agents, detecting fraud, and allowing community ratings, ensuring every user enjoys a safe, reliable experience online.",
+    icon: "../../assets/svg/faq-trust.svg"
+  },
+  {
+    question: "Can I buy furniture here?",
+    answer: "Yes, you can browse and purchase furniture directly from our marketplace.",
+    icon: "../../assets/svg/faq-furniture.svg"
+  },
+  {
+    question: "Is it optimized for low data?",
+    answer: "Our platform is designed to work efficiently even on low data connections.",
+    icon: "../../assets/svg/faq-data.svg"
+  },
+  {
+    question: "What makes Breedgestone different?",
+    answer: "We combine verified listings, expert support, and a seamless experience for buyers and renters.",
+    icon: "../../assets/svg/faq-different.svg"
+  },
+  {
+    question: "How does AI search work?",
+    answer: "Our AI search matches you with the best properties based on your preferences and needs.",
+    icon: "../../assets/svg/faq-ai.svg"
+  },
+  {
+    question: "What payment methods are supported?",
+    answer: "We support multiple secure payment options for your convenience.",
+    icon: "../../assets/svg/faq-payment.svg"
+  }
+];
+const activeFaq = ref(0)
 
+const filteredProperties = computed(() => {
   return allProperties.value.filter((p) => p.type === activeTab.value)
 })
-console.log("Filtered Properties:", filteredProperties.value);
 
 const handleSearch = () => {
   const searchData = {
@@ -475,9 +678,6 @@ const handleSearch = () => {
     location: location.value,
     moveInDate: moveInDate.value,
   }
-
-  console.log('Search data:', searchData)
-
   if (!location.value) {
     alert('Please enter a location')
     return
