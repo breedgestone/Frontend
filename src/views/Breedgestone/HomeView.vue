@@ -3,10 +3,12 @@
     <!-- Hero Section -->
     <section class="bg-[#F7F7FD]">
       <div
-        class="bg-[#F7F7FD] md:py-16 py-8 max-w-[1920px] mx-auto min-h-[70vh] bg-center bg-no-repeat relative lg:bg-cover lg:bg-[url('/hero.png')] sm:bg-[url('/mobile-hero.png')]">
-        <div class="relative z-10 flex items-center px-4 md:px-12 max-w-7xl">
+        class="bg-[#F7F7FD] md:py-16 py-8 max-w-[1920px] mx-auto xl:min-h-[100vh] min-h-[70vh] bg-center bg-no-repeat relative lg:bg-cover lg:bg-[url('/hero.png')] sm:bg-[url('/mobilehero.svg')]">
+        <div class="absolute inset-0 z-0 bg-[#F7F7FD]/95 lg:hidden sm:block hidden"></div>
+
+        <div class="relative z-10 mb-16 flex items-center px-4 md:px-12 max-w-7xl">
           <div class="2xl:w-[570px] xl:w-[450px] lg:w-[300px]">
-            <h1 class="text-2xl font-campton text-neutral-5 lg:text-3xl xl:text-5xl font-bold leading-tight">
+            <h1 class="text-2xl font-campton text-neutral-5 sm:text-3xl xl:text-4xl font-bold leading-tight">
               Africa’s Trusted Hub for Living and Building
             </h1>
             <p class="mt-4 text-neutral-5 font-poppins xl:text-lg max-w-xl">
@@ -25,10 +27,10 @@
             </div>
           </div>
         </div>
-        <div class="sm:w-3/5 w-full min-w-fit px-4 md:px-12 max-w-7xl">
+        <div class="sm:w-3/5  relative z-10   w-full min-w-fit px-4 md:px-12 max-w-7xl">
           <!-- Tabs -->
           <div
-            class="flex justify-around bg-primary-0 rounded-t-lg gap-4 px-3 pt-3 border-b border-primary-1 sm:w-fit w-full">
+            class="flex flex-wrap justify-around bg-primary-0 rounded-t-lg gap-4 px-3 pt-3 border-b border-primary-1 sm:w-fit w-full">
             <button v-for="tab in tabs" :key="tab" @click="activeTab = tab" :class="[
               ' p-2 text-sm font-semibold relative transition-colors',
               activeTab === tab
@@ -38,9 +40,8 @@
               {{ tab }}
             </button>
           </div>
-
           <!-- Form -->
-          <div class="p-5 rounded-lg bg-primary-0 sm:block hidden">
+          <div class="p-5 rounded-lg bg-primary-0  sm:block hidden">
             <div class="flex flex-col sm:flex-row gap-6 items-end">
               <!-- Location -->
               <div class="flex-1 flex flex-col">
@@ -69,7 +70,7 @@
     <!-- Trusted Companies -->
     <section class="py-8 bg-white">
       <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="font-campton font-bold 2xl:text-4xl xl:text-3xl md:text-2xl text-xl">
+        <h2 class=" font-bold font-campton lg:text-3xl xl:text-4xl text-2xl">
           Many Companies Trust Breedgestone
         </h2>
         <div class="flex justify-between flex-wrap gap-8 mt-8 text-neutral-4">
@@ -96,7 +97,7 @@
       <div class="max-w-7xl mx-auto px-6 text-primary-0">
         <img src="../../assets/svg/three-yellow-stars.svg" alt="breedgestone three yellow stars" />
         <div class="flex md:flex-row flex-col w-full justify-between gap-3 mt-8">
-          <h3 class="font-bold max-w-[700px] font-campton lg:text-3xl xl:text-5xl text-2xl">
+          <h3 class="font-bold max-w-[700px] font-campton lg:text-3xl xl:text-4xl text-2xl">
             We Make it Easy for <span class="text-primary-5">TENANTS</span> and
             <span class="text-primary-5">LANDLORDS</span>
           </h3>
@@ -112,7 +113,7 @@
             <img src="../../assets/svg/media-whitebg.svg" alt="">
             <div class="">
               <h3 class="font-bold">Tenants</h3>
-              <p class="mt-2 text-neutral-3">Service description for tenants.</p>
+              <p class="mt-2 text-primary-0">Service description for tenants.</p>
             </div>
           </div>
           <div class="flex items-start gap-2 bg-primary-0 text-neutral-9 p-6 rounded-lg">
@@ -126,62 +127,171 @@
             <img src="../../assets/svg/getReady.svg" alt="">
             <div class="">
               <h3 class="font-bold">Builders</h3>
-              <p class="mt-2 text-neutral-3">Service description for builders.</p>
+              <p class="mt-2 text-primary-0">Service description for builders.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="border border-[#312F4B] w-full my-8"></div>
-      <div class="w-full text-primary-0 sm:gap-8 gap-4 flex justify-center items-center">
-        <div class="flex flex-col">
-          <h4>7.4%</h4>
-          <p>Property Return Rate</p>
+      <div
+        class="w-full px-6 text-primary-0 sm:gap-8 gap-4 flex sm:flex-row flex-col justify-center items-center sm:text-left text-center">
+        <div class="flex flex-col ">
+          <h4 class="font-bold text-xl">7.4%</h4>
+          <p class="opacity-70 font-poppins">Property Return Rate</p>
+        </div>
+        <div class="flex flex-col sm:border-x border-x-0 border-y sm:border-y-0 sm:px-6 px-0 sm:py-0 py-6 ">
+          <h4 class="font-bold text-xl">3,856</h4>
+          <p class="opacity-70 font-poppins">Property in sell & Rent</p>
         </div>
         <div class="flex flex-col">
-          <h4>7.4%</h4>
-          <p>Property Return Rate</p>
-        </div>
-        <div class="flex flex-col">
-          <h4>7.4%</h4>
-          <p>Property Return Rate</p>
+          <h4 class="font-bold text-xl">2540</h4>
+          <p class="opacity-70 font-poppins">Daily Completed Transactions</p>
         </div>
       </div>
     </section>
 
     <!-- Properties Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-[#F9F9F9]">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-2xl font-bold mb-6">Based on Your Need</h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div class="bg-neutral-7 rounded-lg overflow-hidden">
-            <img alt="Property image placeholder" class="w-full h-40 bg-neutral-6" />
-            <div class="p-4">
-              <p class="font-semibold">Property title</p>
-              <p class="text-sm text-neutral-3">Price / details</p>
-            </div>
+        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mb-6">Based on Your Need</h2>
+
+        <!-- Tabs -->
+        <div class="flex sm:flex-row mb-6 gap-3 flex-col-reverse sm:justify-between justify-center">
+
+          <div
+            class="flex flex-wrap gap-4 bg-primary-0-5/50 px-4 py-2 rounded-lg w-fit focus:border-primary-0-5/50 focus:ring-primary-0-5/50 ">
+            <button v-for="tab in tabs" :key="tab" @click="activeTab = tab" :class="[
+              'sm:px-5 px-3 py-2 rounded-[6px] font-medium transition',
+              activeTab === tab
+                ? 'bg-primary-0 text-neutral-5 border-primary-3 shadow-lg shadow-primary-0-5  border-2'
+                : 'text-neutral-7  hover:bg-primary-0-5',
+            ]">
+              {{ tab }}
+            </button>
           </div>
-          <div class="bg-neutral-7 rounded-lg overflow-hidden">
-            <img alt="Property image placeholder" class="border w-full h-40 bg-neutral-6" />
-            <div class="p-4">
-              <p class="font-semibold">Property title</p>
-              <p class="text-sm text-neutral-3">Price / details</p>
-            </div>
-          </div>
-          <!-- Repeat cards -->
+          <input class=" rounded-lg border-neutral-2 border-2 p-4" type="search" placeholder="search" name="" id="">
+        </div>
+
+        <!-- Grid -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6 font-poppins">
+          <PropertyCard @click="clicked(property.id)" v-for="property in filteredProperties" :key="property.id"
+            :property="property" />
+
+        </div>
+
+        <!-- Browse more button -->
+        <div class="flex justify-center mt-10">
+          <B-button size="xl" variant="outline"> Browse more properties
+          </B-button>
         </div>
       </div>
     </section>
 
+
     <!-- Materials -->
-    <section class="py-16 bg-neutral-1">
+    <section class="py-16">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-2xl font-bold mb-6">Materials That Make Spaces</h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          <div class="bg-white rounded-lg p-4 shadow">
-            <img alt="Material image placeholder" class="w-full h-32 border bg-neutral-6" />
-            <p class="mt-3 text-sm">Category</p>
+        <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold mb-1">Materials That Make Spaces</h2>
+        <p class="font-poppins text-neutral-4 lg:text-lg mb-6">Whether you’re building from the ground up or finishing
+          with décor, we
+          supply
+          the essentials that bring every space to life.</p>
+        <div class="flex items-center mb-3 gap-2 justify-between">
+          <h4 class="font-campton text-lg  font-semibold">Best Seller Products</h4>
+          <router-link class="text-primary-5 flex items-center gap-2 hover:translate-x-1" to="/products">View all <svg
+              width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.2178 7H1.21777" stroke="#7600CD" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10.168 0.974609L16.218 6.99861L10.168 13.0236" stroke="#7600CD" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </router-link>
+        </div>
+        <div class="grid font-poppins sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
+          <div @click="router.push({ name: 'productDetails', params: { id: index + 1 } })" role="button"
+            class="bg-white rounded-lg sm:w-[300px] w-full shadow group relative transition-all hover:shadow-primary-5"
+            v-for="(item, index) in 4">
+            <!-- Image container for hover effect -->
+            <div class="relative">
+              <img alt="Material image placeholder" src="/public/svg/house2.svg"
+                class="w-full h-[246px] object-cover rounded-t-lg" />
+              <!-- Overlay only on image -->
+              <div
+                class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-end p-4 justify-center z-10">
+                <button>
+
+                  <img src="../../assets/svg/whiteWishlist.svg" alt="Cart" class="mb-4 w-8 h-8" />
+                </button>
+                <button>
+
+                  <img src="../../assets/svg/whiteEyes.svg" alt="Wishlist" class="w-8 h-8" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4 flex items-center justify-between">
+              <div>
+                <p class="mt-3 text-sm text-[#4D4D4D]">Emerald Velvet</p>
+                <p class="font-semibold text-neutral-9 mb-2">₦85,000.00</p>
+                <star-rating :modelValue="3" />
+              </div>
+              <button class="rounded-full cursor-pointer hover:shadow">
+                <img src="../../assets/svg/ashCart.svg" alt="">
+              </button>
+            </div>
           </div>
           <!-- Repeat cards -->
+        </div>
+        <div class="flex xl:flex-nowrap flex-wrap gap-8 mt-8 w-full">
+          <div class="flex font-poppins flex-col gap-8 w-full md:flex-row">
+            <!-- Hot Deals -->
+            <div class="flex-1">
+              <h3 class="font-bold font-campton  text-xl mb-4">Hot Deals</h3>
+              <div class="flex flex-col gap-6">
+                <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
+                  <img src="/public/svg/hotdeals.svg" alt="Emerald Oasis" class="w-24 h-24 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-poppins text-sm text-neutral-700">Emerald Oasis</p>
+                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
+                    <star-rating :modelValue="4" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Best Seller -->
+            <div class="flex-1">
+              <h3 class="font-bold  font-campton text-xl mb-4">Best Seller</h3>
+              <div class="flex flex-col gap-6">
+                <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
+                  <img src="/public/svg/bestseller.svg" alt="Royal Velvet" class="w-24 h-24 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-poppins text-sm text-neutral-700">Royal Velvet</p>
+                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
+                    <star-rating :modelValue="4" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Top Rated -->
+            <div class="flex-1">
+              <h3 class="font-bold font-campton  text-xl mb-4">Top Rated</h3>
+              <div class="flex flex-col gap-6">
+                <div v-for="item in 3" class="bg-white rounded-xl shadow p-1 flex gap-4 items-center">
+                  <img src="/public/svg/topRated.svg" alt="Giant Rustic" class="w-24 h-24 object-cover rounded-lg" />
+                  <div>
+                    <p class="font-poppins text-sm text-neutral-700">Giant Rustic</p>
+                    <p class="font-semibold text-neutral-900">₦85,000.00</p>
+                    <star-rating :modelValue="4" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img class="flex-1" src="../../assets/svg/yellowSales.svg" alt="">
+          </div>
         </div>
       </div>
     </section>
@@ -255,10 +365,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import StarRating from '@/components/StarRating.vue'
+import PropertyCard from "@/components/PropertyCard.vue"
 
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const modules = [Navigation, Scrollbar, A11y, Autoplay]
 
 const onSwiper = (swiper) => {
@@ -267,12 +380,94 @@ const onSwiper = (swiper) => {
 const onSlideChange = () => {
   console.log('slide change')
 }
-
-const activeTab = ref('Purchase')
+const clicked = (id) => {
+  router.push({ name: 'productDetails', params: { id } })
+}
+const activeTab = ref('Rent')
 const tabs = ['Purchase', 'Rent', 'Shortlet']
 
 const location = ref('')
 const moveInDate = ref('')
+const allProperties = ref([
+  {
+    id: 1,
+    type: "Rent",
+    title: "6 Bedroom Detached Duplex With Rooftop Terrace",
+    price: "₦2,700,000.00 ",
+    location: "Abuja, Nigeria",
+    image: "house4.svg",
+    beds: 6,
+    baths: 2,
+    duration: " Year",
+    size: "5x7 m²",
+  },
+  {
+    id: 2,
+    type: "Buy",
+    title: "Luxury 4 Bedroom Duplex",
+    price: "₦120,000,000.00",
+    location: "Lagos, Nigeria",
+    image: "house2.svg",
+    beds: 4,
+    baths: 3,
+    duration: " Year",
+    size: "6x8 m²",
+  },
+  {
+    id: 3,
+    type: "Shortlet",
+    title: "Modern 3 Bedroom Apartment",
+    price: "₦80,000.00 ",
+    location: "Port Harcourt, Nigeria",
+    image: "house3.svg",
+    beds: 3,
+    baths: 2,
+    duration: " Night",
+    size: "4x6 m²",
+  },
+  {
+    id: 4,
+    type: "Rent",
+    title: "Cozy 2 Bedroom Flat",
+    price: "₦900,000.00 ",
+    location: "Ibadan, Nigeria",
+    image: "house1.svg",
+    beds: 2,
+    baths: 1,
+    duration: " Year",
+    size: "3x5 m²",
+  },
+  {
+    id: 4,
+    type: "Rent",
+    title: "Cozy 2 Bedroom Flat",
+    price: "₦900,000.00 ",
+    location: "Ibadan, Nigeria",
+    image: "house2.svg",
+    beds: 2,
+    baths: 1,
+    duration: " Year",
+    size: "3x5 m²",
+  },
+  {
+    id: 4,
+    type: "Rent",
+    title: "Cozy 2 Bedroom Flat",
+    price: "₦900,000.00 ",
+    location: "Ibadan, Nigeria",
+    image: "house3.svg",
+    beds: 2,
+    baths: 1,
+    duration: " Year",
+    size: "3x5 m²",
+  },
+])
+const filteredProperties = computed(() => {
+  console.log("Filtering properties for tab:", activeTab.value, allProperties.value);
+
+  return allProperties.value.filter((p) => p.type === activeTab.value)
+})
+console.log("Filtered Properties:", filteredProperties.value);
 
 const handleSearch = () => {
   const searchData = {

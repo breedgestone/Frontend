@@ -2,10 +2,7 @@
   <nav class="bg-white border-b border-neutral-1 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
       <!-- Left: Logo -->
-      <button
-        class="hidden md:flex cursor-pointer items-center space-x-2"
-        @click="router.push('/')"
-      >
+      <button class="hidden md:flex cursor-pointer items-center space-x-2" @click="router.push('/')">
         <img src="../../assets/svg/logo.svg" alt="Logo" />
       </button>
       <!-- Mobile Hamburger -->
@@ -16,34 +13,19 @@
       </div>
       <!-- Center: Nav Links -->
       <div class="hidden md:flex space-x-6 items-center">
-        <router-link to="/" class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Home</router-link
-        >
-        <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >About Us</router-link
-        >
-        <router-link
-          to="/properties"
-          class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Properties
+        <router-link to="/" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
+        <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">About Us</router-link>
+        <router-link to="/properties" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
         </router-link>
 
-        <router-link to="/products" class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Products</router-link
-        >
-        <router-link
-          to="/interior-design"
-          class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Interior Design</router-link
-        >
-        <router-link
-          to="/consultations"
-          class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Consultations</router-link
-        >
-        <router-link to="/contact" class="text-sm font-medium text-neutral-6 hover:text-primary-5"
-          >Contact Us</router-link
-        >
+        <router-link to="/products"
+          class="text-sm font-medium text-neutral-6 hover:text-primary-5">Products</router-link>
+        <router-link to="/interior-design" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Interior
+          Design</router-link>
+        <router-link to="/consultations"
+          class="text-sm font-medium text-neutral-6 hover:text-primary-5">Consultations</router-link>
+        <router-link to="/contact" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Contact
+          Us</router-link>
       </div>
       <div class="md:hidden flex">
         <p class="capitalize text-sm font-medium text-neutral-6">

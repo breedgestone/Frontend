@@ -15,7 +15,8 @@ const PropertiesBuyHouse = () => import('@/views/Breedgestone/Properties/BuyHous
 const PropertiesShortLet = () => import('@/views/Breedgestone/Properties/Shortlet.vue')
 const Properties = () => import('@/views/Breedgestone/Properties/Index.vue')
 const Consultations = () => import('@/views/Breedgestone/Consultation.vue')
-const Products = () => import('@/views/Breedgestone/Products.vue')
+const Products = () => import('@/views/Breedgestone/Products/Index.vue')
+const ProductDetails = () => import('@/views/Breedgestone/Products/_Id.vue')
 const InteriorDesign = () => import('@/views/Breedgestone/InteriorDesign.vue')
 // const Login = () => import('@/views/Auth/Login.vue')
 // const Register = () => import('@/views/Auth/Register.vue')
@@ -35,8 +36,9 @@ const routes = [
       { path: 'properties/buy', name: 'properties-buy', component: PropertiesBuyHouse },
       { path: 'properties/shortlet', name: 'properties-shortlet', component: PropertiesShortLet },
       { path: 'consultations', name: 'consultations', component: Consultations },
-      { path: 'products', name: 'products', component: Products },
       { path: 'interior-design', name: 'interior design', component: InteriorDesign },
+      { path: 'products', name: 'products', component: Products },
+      { path: 'products/:id', name: 'productDetails', component: ProductDetails },
     ],
   },
   {

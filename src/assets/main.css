@@ -13,4 +13,11 @@ body {
 }
 * {
   font-family: 'Poppins', sans-serif;
+  transition-duration: 500ms;
+}
+button {
+  cursor: pointer;
+}
+.max-w-7xl {
+  max-width: 1920px;
 }

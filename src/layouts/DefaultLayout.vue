@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Navbar -->
-    <Navbar />
+    <div class="sticky top-0 z-50">
+      <Navbar />
+    </div>
 
     <!-- Main Content -->
     <main class="flex-grow">
