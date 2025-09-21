@@ -32,21 +32,21 @@
   --color-secondary-9-5: #1a1600;
   --color-secondary-10: #000000;
   /* accent1 */
-  --color-accent1-0: #ffffff;
-  --color-accent1-0-5: #ffeeeb;
-  --color-accent1-1: #ffddd6;
-  --color-accent1-1-5: #ffcdc2;
-  --color-accent1-2: #ffbcad;
-  --color-accent1-3: #ff9a85;
-  --color-accent1-4: #ff799c;
-  --color-accent1-5: #ff5733;
-  --color-accent1-6: #cc4629;
-  --color-accent1-7: #99341f;
-  --color-accent1-8: #662314;
-  --color-accent1-8-5: #4d1a0f;
-  --color-accent1-9: #33110a;
-  --color-accent1-9-5: #1a0905;
-  --color-accent1-10: #000000;
+  --color-accent-0: #ffffff;
+  --color-accent-0-5: #ffeeeb;
+  --color-accent-1: #ffddd6;
+  --color-accent-1-5: #ffcdc2;
+  --color-accent-2: #ffbcad;
+  --color-accent-3: #ff9a85;
+  --color-accent-4: #ff799c;
+  --color-accent-5: #ff5733;
+  --color-accent-6: #cc4629;
+  --color-accent-7: #99341f;
+  --color-accent-8: #662314;
+  --color-accent-8-5: #4d1a0f;
+  --color-accent-9: #33110a;
+  --color-accent-9-5: #1a0905;
+  --color-accent-10: #000000;
   /* accent2 */
   --color-accent2-0: #ffffff;
   --color-accent2-0-5: #fcf7fc;

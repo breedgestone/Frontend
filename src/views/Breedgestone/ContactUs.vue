@@ -1,110 +1,107 @@
-<script setup></script>
+<script setup>
+const contactReasons = [
+  'General Inquiry',
+  'Support',
+  'Partnership',
+]
+</script>
 
 <template>
-  <div class="font-poppins">
-    <!-- Contact Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
-      <!-- Left: Form -->
-      <div>
-        <h2 class="font-campton font-bold text-3xl text-neutral-9">Get in touch</h2>
-        <p class="mt-2 text-neutral-3">We’d love to hear from you. Please fill out this form.</p>
-
-        <form class="mt-8 bg-neutral-1 shadow-sm rounded-lg p-6 space-y-4">
-          <div class="grid md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="*Full Name"
-              class="w-full border border-neutral-3 rounded-lg px-4 py-3"
-            />
-            <select class="w-full border border-neutral-3 rounded-lg px-4 py-3 text-neutral-3">
-              <option>*Reason for Contacting Us</option>
-              <option>General Inquiry</option>
-              <option>Support</option>
-              <option>Partnership</option>
-            </select>
+  <div class="font-poppins  min-h-screen">
+    <section class="max-w-7xl mx-auto px-4 md:px-12 py-8 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class=" w-full">
+        <h2 class="font-campton font-bold text-2xl md:text-3xl text-neutral-9 mb-2">Get in touch</h2>
+        <p class="mt-1 text-neutral-3 mb-6">We’d love to hear from you. Please fill out this form.</p>
+        <form class="bg-[#F7F7FD] shadow-sm rounded-xl p-6 md:p-8 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="*First name"
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required />
+            <input type="text" placeholder="*Last name"
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required />
           </div>
-          <div class="grid md:grid-cols-2 gap-4">
-            <input
-              type="email"
-              placeholder="*Email Address"
-              class="w-full border border-neutral-3 rounded-lg px-4 py-3"
-            />
-            <input
-              type="tel"
-              placeholder="*Phone Number"
-              class="w-full border border-neutral-3 rounded-lg px-4 py-3"
-            />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="email" placeholder="*Email Address"
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required />
+            <input type="tel" placeholder="*Phone Number"
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required />
           </div>
-          <textarea
-            placeholder="Write your message"
-            class="w-full border border-neutral-3 rounded-lg px-4 py-3 h-32"
-          ></textarea>
+          <select
+            class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+            required>
+            <option value="" disabled selected>*Your reason for contacting us</option>
+            <option v-for="reason in contactReasons" :key="reason">{{ reason }}</option>
+          </select>
+          <textarea placeholder="Write your message"
+            class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 h-32 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+            required></textarea>
+          <div class="flex gap-6 justify-between items-center flex-wrap">
 
-          <label class="flex items-center gap-2 text-sm text-neutral-3">
-            <input type="checkbox" class="accent-color-primary-5" />
-            I agree with
-            <a href="#" class="text-color-primary-5 underline">Terms of Use</a>
-            and
-            <a href="#" class="text-color-primary-5 underline">Privacy Policy</a>
-          </label>
+            <label class="flex items-center gap-2 sm:text-sm text-xs text-neutral-3">
+              <input type="checkbox" class="accent-primary-5" required />
+              I agree with
+              <a href="#" class="text-primary-5  underline">Terms of Use</a>
+              and
+              <a href="#" class="text-primary-5  sm:text-sm text-xs underline">Privacy Policy</a>
 
-          <button
-            type="submit"
-            class="bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg w-full"
-          >
-            Contact Us
-          </button>
+            </label>
+            <B-button class="flex-1" type="submit"> Contact Us
+            </B-button>
+          </div>
         </form>
       </div>
-
-      <!-- Right: Info -->
-      <div>
-        <h2 class="font-campton font-bold text-3xl text-neutral-9">We’d love to hear from you</h2>
-        <p class="mt-2 text-neutral-3">
+      <div class=" flex flex-col items-center md:items-start">
+        <h2 class="font-campton font-bold text-2xl md:text-3xl text-center md:text-left text-neutral-9 mb-2">
+          We’d love to hear from you
+        </h2>
+        <p class="mt-1 text-neutral-3 text-center md:text-left mb-6 md:mb-8">
           Need something cleared up? Here are our most frequently asked questions.
         </p>
-
-        <div class="mt-8 space-y-8">
+        <div class="w-full flex flex-col gap-8">
           <!-- Email -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-neutral-2">
-              <img src="" alt="Email icon" class="w-6 h-6 bg-neutral-7 rounded" />
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF5F0] mb-2 md:mb-0">
+              <img src="../../assets/svg/email.svg" alt="Email icon" class="w-7 h-7" />
             </div>
-            <div>
-              <h3 class="font-campton font-bold text-neutral-9">Email</h3>
-              <p class="text-neutral-3">Our friendly team is here to help.</p>
-              <a href="mailto:hi@agency.com" class="text-color-primary-5">hi@agency.com</a>
+            <div class="text-center md:text-left">
+              <h3 class="font-campton font-bold text-neutral-9 text-lg mb-1">Email</h3>
+              <p class="text-neutral-3 text-sm mb-1">Our friendly team is here to help.</p>
+              <a href="mailto:hi@agency.com" class="text-primary-5 font-medium text-base">hi@agency.com</a>
             </div>
           </div>
-
           <!-- Phone -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-neutral-2">
-              <img src="" alt="Phone icon" class="w-6 h-6 bg-neutral-7 rounded" />
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#F5F0FF] mb-2 md:mb-0">
+              <img src="../../assets/svg/phone.svg" alt="Phone icon" class="w-7 h-7" />
             </div>
-            <div>
-              <h3 class="font-campton font-bold text-neutral-9">Phone</h3>
-              <p class="text-neutral-3">Mon-Fri from 8am to 5pm.</p>
-              <a href="tel:+15550000000" class="text-color-primary-5">+1 (555) 000-0000</a>
+            <div class="text-center md:text-left">
+              <h3 class="font-campton font-bold text-neutral-9 text-lg mb-1">Phone</h3>
+              <p class="text-neutral-3 text-sm mb-1">Mon-Fri from 8am to 5pm.</p>
+              <a href="tel:+15550000000" class="text-primary-5 font-medium text-base">+1 (555) 000-0000</a>
             </div>
           </div>
-
           <!-- Office -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-neutral-2">
-              <img src="" alt="Location icon" class="w-6 h-6 bg-neutral-7 rounded" />
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E7F5E8] mb-2 md:mb-0">
+              <img src="../../assets/svg/location.svg" alt="Location icon" class="w-7 h-7" />
             </div>
-            <div>
-              <h3 class="font-campton font-bold text-neutral-9">Office</h3>
-              <p class="text-neutral-3">Come say hello at our office HQ.</p>
-              <address class="not-italic text-color-primary-5">
-                100 Smith Street <br />
+            <div class="text-center md:text-left">
+              <h3 class="font-campton font-bold text-neutral-9 text-lg mb-1">Office</h3>
+              <p class="text-neutral-3 text-sm mb-1">Come say hello at our office HQ.</p>
+              <address class="not-italic text-primary-5 font-medium text-base">
+                100 Smith Street<br />
                 Collingwood VIC 3066 AU
               </address>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Right: Form -->
+
     </section>
   </div>
 </template>

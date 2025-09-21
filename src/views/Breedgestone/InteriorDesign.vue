@@ -3,31 +3,70 @@
 <template>
   <div class="font-poppins">
     <!-- Hero Section -->
-    <header class="bg-neutral-1">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center py-16">
-        <div>
-          <h1 class="font-campton font-bold text-4xl md:text-5xl text-neutral-9 leading-tight">
-            Modern Interior Design Service
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] flex items-center overflow-x-clip">
+      <!-- Large Yellow Shape -->
+      <div class="absolute left-0 top-0 lg:w-[70vw] w-full h-[600px] bg-[#FFD476]  rounded-tr-[320px] "></div>
+
+      <svg class="absolute left-[40vw] top-[160px] lg:block hidden z-10" width="607" height="400" viewBox="0 0 807 598"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.32" d="M804.117 2.5V595.5H300.617C136.313 595.5 3.1172 462.305 3.11719 298V2.5H804.117Z"
+          stroke="#7600CD" stroke-width="5" />
+      </svg>
+
+
+      <div class="relative  max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-0 items-center">
+        <!-- Left: Text Content -->
+        <div class="pl-8 pt-16 pb-24 ">
+          <h1 class="font-campton font-bold text-4xl md:text-5xl text-neutral-9 mb-6 leading-tight">
+            Modern Interior<br />Design Service
           </h1>
-          <p class="mt-4 text-neutral-3">
-            Transforming spaces with contemporary vision. Our modern interior designers tailor it to
-            your needs.
+          <p class="text-neutral-9  text-lg mb-8 max-w-md">
+            Transforming spaces with contemporary styles, functional layouts, and timeless elegance tailored to your
+            needs
           </p>
-          <button
-            class="mt-6 bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg"
-          >
+          <B-button class="">
             Contact Us
-          </button>
+          </B-button>
+          <!-- Circular Image Overlap -->
+          <div class="flex gap-6 mt-8">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=200&q=80"
+              alt="Dining Area" class="rounded-full w-32 h-60 object-cover shadow-lg border-4 border-white" />
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80"
+              alt="Decor Wall" class="rounded-full w-32 h-80 z-0 object-cover shadow-lg border-4 border-white" />
+          </div>
         </div>
-        <div class="flex justify-center">
-          <img
-            src=""
-            alt="Modern interior design hero image"
-            class="w-full h-72 bg-neutral-7 rounded-lg"
-          />
+        <!-- Right: Hero Image Overlapping Yellow -->
+        <div class="relative lg:flex hidden  justify-center items-center h-full">
+          <img src="../../assets/svg/intdesign.svg" alt="Modern Interior" class=" absolute right-0 top-8 z-30" />
         </div>
       </div>
-    </header>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-6 text-center">
+      <div class="md:col-span-1 flex flex-col justify-center items-center">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+          alt="Decorative showcase" class="w-56 h-56 object-cover rounded-lg shadow-lg" />
+      </div>
+      <div class="md:col-span-2 flex flex-col md:flex-row items-center justify-around">
+        <div>
+          <p class="font-campton font-bold text-4xl text-neutral-9">7</p>
+          <p class="text-neutral-3">Years of experience</p>
+        </div>
+        <div>
+          <p class="font-campton font-bold text-4xl text-neutral-9">162</p>
+          <p class="text-neutral-3">Projects completed</p>
+        </div>
+        <div>
+          <p class="font-campton font-bold text-2xl text-neutral-9 mb-2">Make your dream home.</p>
+          <button class="bg-[#6C2BD7] hover:bg-[#4B1A9B] text-white px-6 py-3 rounded-lg">
+            Talk To Us
+          </button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Stats Section -->
     <section class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-6 text-center">
@@ -44,9 +83,7 @@
           <p class="text-neutral-3">Projects completed</p>
         </div>
         <div>
-          <button
-            class="bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg"
-          >
+          <button class="bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg">
             Make your dream home.
           </button>
         </div>
@@ -65,11 +102,7 @@
           </p>
         </div>
         <div>
-          <img
-            src=""
-            alt="Professionalism icon"
-            class="mx-auto w-16 h-16 bg-neutral-7 rounded-lg"
-          />
+          <img src="" alt="Professionalism icon" class="mx-auto w-16 h-16 bg-neutral-7 rounded-lg" />
           <h3 class="mt-4 font-campton font-bold text-neutral-9">Professionalism</h3>
           <p class="mt-2 text-neutral-3">
             With our strong background, we bring expertise and detail-oriented execution to each
@@ -77,11 +110,7 @@
           </p>
         </div>
         <div>
-          <img
-            src=""
-            alt="Trusted platform icon"
-            class="mx-auto w-16 h-16 bg-neutral-7 rounded-lg"
-          />
+          <img src="" alt="Trusted platform icon" class="mx-auto w-16 h-16 bg-neutral-7 rounded-lg" />
           <h3 class="mt-4 font-campton font-bold text-neutral-9">Trusted platform</h3>
           <p class="mt-2 text-neutral-3">
             A reliable platform for turning your dream home into a reality.
@@ -101,11 +130,7 @@
             <button class="font-poppins text-neutral-9">Before</button>
             <button class="font-poppins text-neutral-9">After</button>
           </div>
-          <img
-            src=""
-            alt="Before and after living room design"
-            class="w-full h-96 bg-neutral-7 rounded-lg"
-          />
+          <img src="" alt="Before and after living room design" class="w-full h-96 bg-neutral-7 rounded-lg" />
           <div class="p-6">
             <h3 class="font-campton font-bold text-neutral-9">Client’s Challenge</h3>
             <p class="text-neutral-3 mt-2">
@@ -166,9 +191,7 @@
           <img src="" alt="Bedroom design 6" class="w-full h-72 bg-neutral-7 rounded-lg" />
         </div>
         <div class="mt-8 text-center">
-          <button
-            class="bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg"
-          >
+          <button class="bg-color-primary-5 hover:bg-color-primary-4 text-white px-6 py-3 rounded-lg">
             Explore Our Work
           </button>
         </div>
@@ -176,22 +199,9 @@
     </section>
 
     <!-- Mobile App Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16 text-center">
-      <h2 class="font-campton font-bold text-3xl text-neutral-9">
-        Enjoy All the Benefits from Our MobileApp
-      </h2>
-      <p class="mt-4 text-neutral-3">
-        The marketplace that fits in your pocket. Easy access to your favorite designs, projects,
-        and updates.
-      </p>
-      <div class="mt-8 flex flex-col md:flex-row justify-center gap-6 items-center">
-        <img src="" alt="Mobile app mockup" class="w-60 h-72 bg-neutral-7 rounded-lg" />
-        <img src="" alt="Mobile app mockup second" class="w-60 h-72 bg-neutral-7 rounded-lg" />
-      </div>
-      <div class="mt-8 flex justify-center gap-4">
-        <img src="" alt="Download on App Store" class="w-36 h-12 bg-neutral-7 rounded-lg" />
-        <img src="" alt="Get it on Google Play" class="w-36 h-12 bg-neutral-7 rounded-lg" />
-      </div>
-    </section>
+    <MobileAppCta />
   </div>
 </template>
+<script setup>
+import MobileAppCta from '@/components/MobileAppCta.vue';
+</script>
