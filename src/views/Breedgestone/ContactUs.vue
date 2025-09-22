@@ -8,11 +8,11 @@ const contactReasons = [
 
 <template>
   <div class="font-poppins  min-h-screen">
-    <section class="max-w-7xl mx-auto px-4 md:px-12 py-8 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <section class="max-w-7xl mx-auto px-4 md:px-12 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class=" w-full">
         <h2 class="font-campton font-bold text-2xl md:text-3xl text-neutral-9 mb-2">Get in touch</h2>
         <p class="mt-1 text-neutral-3 mb-6">We’d love to hear from you. Please fill out this form.</p>
-        <form class="bg-[#F7F7FD] shadow-sm rounded-xl p-6 md:p-8 space-y-4">
+        <form class="bg-[#F7F7FD] max-w-3xl mx-auto shadow-sm rounded-xl p-6 md:p-8 space-y-4">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input type="text" placeholder="*First name"
               class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
@@ -48,7 +48,7 @@ const contactReasons = [
               <a href="#" class="text-primary-5  sm:text-sm text-xs underline">Privacy Policy</a>
 
             </label>
-            <B-button class="flex-1" type="submit"> Contact Us
+            <B-button class="flex-1 max-w-[250px]" type="submit"> Contact Us
             </B-button>
           </div>
         </form>
