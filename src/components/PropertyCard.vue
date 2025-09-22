@@ -39,17 +39,17 @@
                 {{ property.title }}
             </p>
 
-            <div class="flex justify-between sm:text-sm text-xs text-neutral-6 mt-3 ">
+            <div class="flex justify-between xl:text-sm text-xs text-neutral-6 mt-3 ">
                 <div class="flex gap-2 flex-row items-center">
-                    <img class="sm:w-[28px] sm:h-[28px] w-[21px] h-[21px]" src="../assets/svg/purpleCar.svg" alt="">
+                    <img class="xl:w-[28px] xl:h-[28px] w-[21px] h-[21px]" src="../assets/svg/purpleCar.svg" alt="">
                     <span>{{ property.beds }} Beds</span>
                 </div>
                 <div class="flex gap-2 flex-row items-center">
-                    <img class="sm:w-[28px] sm:h-[28px] w-[21px] h-[21px]" src="../assets/svg/sink.svg" alt="" />
+                    <img class="xl:w-[28px] xl:h-[28px] w-[21px] h-[21px]" src="../assets/svg/sink.svg" alt="" />
                     <span>{{ property.baths }} Baths</span>
                 </div>
                 <div class="flex gap-2 flex-row items-center">
-                    <img class="sm:w-[28px] sm:h-[28px] w-[21px] h-[21px]" src="../assets/svg/sink.svg" alt="" />
+                    <img class="xl:w-[28px] xl:h-[28px] w-[21px] h-[21px]" src="../assets/svg/sink.svg" alt="" />
                     <span>{{ property.size }} Baths</span>
                 </div>
             </div>
