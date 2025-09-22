@@ -10,10 +10,8 @@ const AdminLayout = () => import('@/layouts/AdminLayout.vue')
 const Home = () => import('@/views/Breedgestone/HomeView.vue')
 const About = () => import('@/views/Breedgestone/AboutView.vue')
 const Contact = () => import('@/views/Breedgestone/ContactUs.vue')
-const PropertiesRentHouse = () => import('@/views/Breedgestone/Properties/RentHouse.vue')
-const PropertiesBuyHouse = () => import('@/views/Breedgestone/Properties/BuyHouse.vue')
-const PropertiesShortLet = () => import('@/views/Breedgestone/Properties/Shortlet.vue')
 const Properties = () => import('@/views/Breedgestone/Properties/Index.vue')
+const singleProperties = () => import('@/views/Breedgestone/Properties/singleProperties.vue')
 const Consultations = () => import('@/views/Breedgestone/Consultation.vue')
 const Products = () => import('@/views/Breedgestone/Products/Index.vue')
 const ProductDetails = () => import('@/views/Breedgestone/Products/_Id.vue')
@@ -31,10 +29,15 @@ const routes = [
       { path: '', name: 'home', component: Home },
       { path: 'about', name: 'about', component: About },
       { path: 'contact', name: 'contact', component: Contact },
-      { path: 'properties', name: 'properties', component: Properties },
-      { path: 'properties/rent', name: 'properties-rent', component: PropertiesRentHouse },
-      { path: 'properties/buy', name: 'properties-buy', component: PropertiesBuyHouse },
-      { path: 'properties/shortlet', name: 'properties-shortlet', component: PropertiesShortLet },
+      {
+        path: 'properties/single/:id',
+        name: 'property-single',
+        component: singleProperties,
+        props: true,
+      },
+      { path: 'properties/rent', name: 'properties-rent', component: Properties },
+      { path: 'properties/buy', name: 'properties-buy', component: Properties },
+      { path: 'properties/shortlet', name: 'properties-shortlet', component: Properties },
       { path: 'consultations', name: 'consultations', component: Consultations },
       { path: 'interior-design', name: 'interior design', component: InteriorDesign },
       { path: 'products', name: 'products', component: Products },
@@ -64,6 +67,13 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0, left: 0 }
+    }
+  },
 })
 
 export default router

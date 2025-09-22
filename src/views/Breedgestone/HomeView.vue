@@ -172,7 +172,8 @@
 
         <!-- Browse more button -->
         <div class="flex justify-center mt-10">
-          <B-button size="xl" variant="outline"> Browse more properties
+          <B-button @click="router.push(`/properties/${activeTab.toLowerCase()}`)" size="xl" variant="outline"> Browse
+            more properties
           </B-button>
         </div>
       </div>
@@ -454,7 +455,7 @@
               </div>
             </div>
             <div class="xl:col-span-2 flex justify-center mt-2 w-full">
-              <B-button size="xl" variant="outline">
+              <B-button size="xl" variant="outline" @click="router.push({ name: 'interior design' })">
                 Start My Transformation
 
               </B-button>
@@ -503,9 +504,10 @@ import MobileAppCta from '@/components/MobileAppCta.vue'
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import { useRouter } from 'vue-router'
 import FaqAccordion from '@/components/FaqAccordion.vue'
+import { dummy } from '../dummy'
 const router = useRouter()
 const modules = [Navigation, Scrollbar, A11y, Autoplay]
-
+const allProperties = ref(dummy)
 const onSwiper = (swiper) => {
   // console.log(swiper)
 }
@@ -516,85 +518,12 @@ const clicked = (id) => {
   router.push({ name: 'productDetails', params: { id } })
 }
 const activeTab = ref('Rent')
-const tabs = ['Purchase', 'Rent', 'Shortlet']
+const tabs = ['Buy', 'Rent', 'Shortlet']
 const buyOrSell = ["House To Buy", "House To Sell"]
 const activeTabForBuyOrSell = ref('House To Buy')
 const location = ref('')
 const moveInDate = ref('')
-const allProperties = ref([
-  {
-    id: 1,
-    type: "Rent",
-    title: "6 Bedroom Detached Duplex With Rooftop Terrace",
-    price: "₦2,700,000.00 ",
-    location: "Abuja, Nigeria",
-    image: "house4.svg",
-    beds: 6,
-    baths: 2,
-    duration: " Year",
-    size: "5x7 m²",
-  },
-  {
-    id: 2,
-    type: "Buy",
-    title: "Luxury 4 Bedroom Duplex",
-    price: "₦120,000,000.00",
-    location: "Lagos, Nigeria",
-    image: "house2.svg",
-    beds: 4,
-    baths: 3,
-    duration: " Year",
-    size: "6x8 m²",
-  },
-  {
-    id: 3,
-    type: "Shortlet",
-    title: "Modern 3 Bedroom Apartment",
-    price: "₦80,000.00 ",
-    location: "Port Harcourt, Nigeria",
-    image: "house3.svg",
-    beds: 3,
-    baths: 2,
-    duration: " Night",
-    size: "4x6 m²",
-  },
-  {
-    id: 4,
-    type: "Rent",
-    title: "Cozy 2 Bedroom Flat",
-    price: "₦900,000.00 ",
-    location: "Ibadan, Nigeria",
-    image: "house1.svg",
-    beds: 2,
-    baths: 1,
-    duration: " Year",
-    size: "3x5 m²",
-  },
-  {
-    id: 4,
-    type: "Rent",
-    title: "Cozy 2 Bedroom Flat",
-    price: "₦900,000.00 ",
-    location: "Ibadan, Nigeria",
-    image: "house2.svg",
-    beds: 2,
-    baths: 1,
-    duration: " Year",
-    size: "3x5 m²",
-  },
-  {
-    id: 4,
-    type: "Rent",
-    title: "Cozy 2 Bedroom Flat",
-    price: "₦900,000.00 ",
-    location: "Ibadan, Nigeria",
-    image: "house3.svg",
-    beds: 2,
-    baths: 1,
-    duration: " Year",
-    size: "3x5 m²",
-  },
-])
+
 const faqs = [
   {
     question: "How do you ensure trust?",
@@ -630,7 +559,7 @@ const faqs = [
 const activeFaq = ref(0)
 
 const filteredProperties = computed(() => {
-  return allProperties.value.filter((p) => p.type === activeTab.value)
+  return allProperties.value.filter((p) => p.type === activeTab.value).slice(0, 6)
 })
 
 const handleSearch = () => {

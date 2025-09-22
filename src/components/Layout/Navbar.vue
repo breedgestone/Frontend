@@ -14,23 +14,45 @@
       <!-- Center: Nav Links -->
       <div class="hidden md:flex xl:space-x-6 lg:space-x-4 space-x-3 items-center">
         <router-link to="/"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Home</router-link>
         <router-link to="/about"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">About
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">About
           Us</router-link>
-        <router-link to="/properties"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
-        </router-link>
+        <div class="relative group">
+          <button :class="isPropertiesActive ? 'bg-primary-5 text-primary-0 px-3 py-2 rounded' : 'text-neutral-6'"
+            class="anchor 2xl:text-lg text-[10px] xl:text-sm font-medium  hover:text-primary-1 flex items-center">
+            Properties
+            <svg class="w-3 h-3 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200">
+            <router-link to="/properties/rent"
+              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-t-lg">
+              Rent
+            </router-link>
+            <router-link to="/properties/buy"
+              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6">
+              Buy
+            </router-link>
+            <router-link to="/properties/shortlet"
+              class="block px-4 py-2 text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-b-lg">
+              Shortlet
+            </router-link>
+          </div>
+        </div>
 
         <router-link to="/products"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Products</router-link>
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Products</router-link>
         <router-link to="/interior-design"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Interior
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Interior
           Design</router-link>
         <router-link to="/consultations"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Consultations</router-link>
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Consultations</router-link>
         <router-link to="/contact"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Contact
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Contact
           Us</router-link>
       </div>
       <div class="md:hidden flex">
@@ -61,8 +83,15 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
+
+const route = useRoute()
+
+const isPropertiesActive = computed(() =>
+  route.path.startsWith('/properties')
+)
 </script>
 
 <style scoped>
@@ -112,7 +141,8 @@ const router = useRouter()
 }
 
 router-link,
-a {
+a,
+.anchor {
   font-family: 'Campton', sans-serif;
   font-weight: 600;
   /* font-size: 1px; */

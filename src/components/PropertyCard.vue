@@ -8,7 +8,7 @@
                     class="relative flex items-center px-4 py-2 rounded-t-xl rounded-br-xl bg-primary-5 text-white font-semibold shadow">
                     <!-- star / sparkle -->
 
-                    <span class="text-sm tracking-wide">POPULAR</span>
+                    <span class="text-sm uppercase tracking-wide">{{ property.category }}</span>
 
                     <div class="absolute -bottom-[18px] left-0 -translate-y-1/2">
                         <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,6 +62,6 @@ defineProps({
     property: {
         type: Object,
         required: true
-    }
+    },
 })
 </script>
