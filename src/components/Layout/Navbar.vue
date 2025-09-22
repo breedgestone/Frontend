@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
       <!-- Left: Logo -->
       <button class="hidden md:flex cursor-pointer items-center space-x-2" @click="router.push('/')">
-        <img src="../../assets/svg/logo.svg" alt="Logo" />
+        <img class="2xl:w-fit xl:w-[118px] xl:h-[19px] w-[94px]" src="../../assets/svg/logo.svg" alt="Logo" />
       </button>
       <!-- Mobile Hamburger -->
       <div class="md:hidden">
@@ -12,37 +12,43 @@
         </button>
       </div>
       <!-- Center: Nav Links -->
-      <div class="hidden md:flex space-x-6 items-center">
-        <router-link to="/" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
-        <router-link to="/about" class="text-sm font-medium text-neutral-6 hover:text-primary-5">About Us</router-link>
-        <router-link to="/properties" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
+      <div class="hidden md:flex xl:space-x-6 lg:space-x-4 space-x-3 items-center">
+        <router-link to="/"
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Home</router-link>
+        <router-link to="/about"
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">About
+          Us</router-link>
+        <router-link to="/properties"
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Properties
         </router-link>
 
         <router-link to="/products"
-          class="text-sm font-medium text-neutral-6 hover:text-primary-5">Products</router-link>
-        <router-link to="/interior-design" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Interior
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Products</router-link>
+        <router-link to="/interior-design"
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Interior
           Design</router-link>
         <router-link to="/consultations"
-          class="text-sm font-medium text-neutral-6 hover:text-primary-5">Consultations</router-link>
-        <router-link to="/contact" class="text-sm font-medium text-neutral-6 hover:text-primary-5">Contact
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Consultations</router-link>
+        <router-link to="/contact"
+          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-5">Contact
           Us</router-link>
       </div>
       <div class="md:hidden flex">
-        <p class="capitalize text-sm font-medium text-neutral-6">
+        <p class="capitalize 2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6">
           {{ router.currentRoute.value.name }}
         </p>
       </div>
 
       <!-- Right: Icons + Sign In -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center lg:space-x-4 md:space-x-2 space-x-4">
         <!-- Wishlist Icon -->
         <button aria-label="Wishlist">
-          <img src="../../assets/svg/ash-heart-light.svg" alt="" />
+          <img class="2xl:w-fit xl:w-[20px]  md:w-[12px] w-[16px]" src="../../assets/svg/ash-heart-light.svg" alt="" />
         </button>
 
         <!-- Cart Icon -->
         <button aria-label="Cart">
-          <img src="../../assets/svg/ash-cart-light.svg" alt="" />
+          <img class="2xl:w-fit xl:w-[20px]  md:w-[12px] w-[16px]" src="../../assets/svg/ash-cart-light.svg" alt="" />
         </button>
 
         <!-- Sign In Button -->

@@ -269,12 +269,18 @@ const tabs = [
               class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
               required />
           </div>
-          <select
-            class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
-            required>
-            <option value="" disabled selected>*Your reason for contacting us</option>
-            <option v-for="reason in contactReasons" :key="reason">{{ reason }}</option>
-          </select>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <select
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required>
+              <option value="" disabled selected>*Pick a day and Time</option>
+              <option v-for="reason in contactReasons" :key="reason">{{ reason }}</option>
+            </select>
+            <input placeholder="*Price"
+              class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
+              required value="N30,000" disabled />
+          </div>
           <textarea placeholder="Write your message"
             class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 h-32 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5"
             required></textarea>
@@ -288,7 +294,7 @@ const tabs = [
               <a href="#" class="text-primary-5  sm:text-sm text-xs underline">Privacy Policy</a>
 
             </label>
-            <B-button class="flex-1 max-w-[250px]" type="submit"> Contact Us
+            <B-button class="flex-1 max-w-[250px]" type="submit"> Pay N30,000
             </B-button>
           </div>
         </form>
