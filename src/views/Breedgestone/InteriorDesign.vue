@@ -273,7 +273,8 @@ const filteredImages = computed(() => {
         </div>
         <!-- CTA Button -->
         <div class="mt-8 text-center">
-          <B-button variant="outline" class="bg-white text-[#6C2BD7] px-8 py-3 rounded-lg font-semibold shadow-md">
+          <B-button @click="router.push({ name: 'consultations' })" variant="outline"
+            class="bg-white text-[#6C2BD7] px-8 py-3 rounded-lg font-semibold shadow-md">
             Reach Out To Us
           </B-button>
         </div>
