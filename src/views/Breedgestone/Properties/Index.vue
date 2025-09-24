@@ -1,7 +1,8 @@
 <template>
   <main class="font-poppins ">
-    <section class="py-16 bg-primary-0">
+    <section class="md:py-16 py-8 bg-primary-0">
       <div class="max-w-7xl mx-auto md:px-12 px-4">
+
         <div v-if="currentRoute === 'buy'" class="flex flex-col gap-y-3 justify-center items-center text-center mb-6">
           <p class="uppercase text-primary-5 font-campton font-bold">Buy a house</p>
           <h2 class="font-campton lg:text-3xl xl:text-4xl text-2xl font-bold ">Claim the Home Meant for You</h2>
@@ -30,6 +31,7 @@
           </p>
 
         </div>
+        <FilterComponent class="mb-8" />
 
         <!-- Tabs -->
         <div class="flex sm:flex-row mb-6 gap-3 flex-col-reverse sm:justify-between justify-center">
@@ -148,6 +150,7 @@ import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import Tabs from '@/components/Tabs.vue'
 import PropertyCard from "@/components/PropertyCard.vue"
 import StarRating from '@/components/StarRating.vue'
+import FilterComponent from '@/components/FilterComponent.vue'
 const modules = [Navigation, Scrollbar, A11y, Autoplay]
 const router = useRouter()
 const route = useRoute()
@@ -156,6 +159,7 @@ const testimonialTabs = ['Buy', 'Rent', 'Shortlet']
 const testimonials = ref([0, 1, 2, 3, 4, 5, 6])
 const allProperties = ref(dummy)
 const currentRoute = ref(null)
+const img = ref(null)
 // New property categories based on your image
 // Tabs for categories
 const tabs = ['Latest', 'Popular', 'Luxury', 'Affordable']

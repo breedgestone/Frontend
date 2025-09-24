@@ -249,13 +249,13 @@
         </p>
         <div class="flex flex-wrap gap-8 justify-center">
           <div v-for="(member, idx) in teamMembers" :key="idx"
-            class="bg-white md:w-[312px] md:h-[358px] w-[187px] h-fit rounded-xl shadow p-2 flex flex-col items-center">
+            class="bg-white md:w-[312px] md:h-[358px] max-h-fit w-[187px] h-fit rounded-xl shadow p-2 flex flex-col items-center">
 
             <img src="../../assets/svg/avatar.svg" alt="Team member" class="sm:w-20 sm:h-20 w-8 h-8 object-cover" />
             <p class="font-semibold text-neutral-9 text-lg mt-2 sm:mt-8 mb-2 ">{{ member.name }}</p>
             <p class="text-sm text-neutral-6 mb-4">{{ member.role }}</p>
             <div class="border-neutral-1/40 sm:my-auto my-2 w-full border"></div>
-            <div class="flex gap-4 mt-auto">
+            <div class="flex gap-4 mt-4">
               <a href="" target="_blank" rel="noopener">
                 <img src="../../assets/svg/blueFacebook.svg" alt="facebook" class="w-5 h-5" />
               </a>
