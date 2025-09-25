@@ -285,7 +285,7 @@ import MobileAppCta from '@/components/MobileAppCta.vue'
 import { Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 const bgClasses = [
   'bg-[#F0F5FF]',
-  'bg=[#FFF9EE]',
+  'bg-[#FFF9EE]',
   'bg-[#F5F6F7]',
   'bg-[#E7F5E8]',
   'bg-[#F1EBFF]',
