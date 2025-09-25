@@ -5,13 +5,15 @@
       <button class="hidden md:flex cursor-pointer items-center space-x-2" @click="router.push('/')">
         <img class="2xl:w-fit xl:w-[118px] xl:h-[19px] w-[94px]" src="../../assets/svg/logo.svg" alt="Logo" />
       </button>
+
       <!-- Mobile Hamburger -->
       <div class="md:hidden">
-        <button aria-label="Open menu">
+        <button aria-label="Open menu" @click="isMobileMenuOpen = true">
           <img src="../../assets/svg/hamburger.svg" alt="" />
         </button>
       </div>
-      <!-- Center: Nav Links -->
+
+      <!-- Center: Nav Links (desktop only) -->
       <div class="hidden md:flex xl:space-x-6 lg:space-x-4 space-x-3 items-center">
         <router-link to="/"
           class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Home</router-link>
@@ -31,15 +33,15 @@
             class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200">
             <router-link to="/properties/rent"
               class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-t-lg">
-              Rent
+              Rent a House
             </router-link>
             <router-link to="/properties/buy"
               class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6">
-              Buy
+              Buy a House
             </router-link>
             <router-link to="/properties/shortlet"
               class="block px-4 py-2 text-[10px] xl:text-sm text-neutral-6 hover:bg-primary-50 hover:text-primary-6 rounded-b-lg">
-              Shortlet
+              Shortlet (Air BVB)
             </router-link>
           </div>
         </div>
@@ -55,6 +57,7 @@
           class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Contact
           Us</router-link>
       </div>
+
       <div class="md:hidden flex">
         <p class="capitalize 2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6">
           {{ router.currentRoute.value.name }}
@@ -63,31 +66,85 @@
 
       <!-- Right: Icons + Sign In -->
       <div class="flex items-center lg:space-x-4 md:space-x-2 space-x-4">
-        <!-- Wishlist Icon -->
         <button aria-label="Wishlist">
           <img class="2xl:w-fit xl:w-[20px]  md:w-[12px] w-[16px]" src="../../assets/svg/ash-heart-light.svg" alt="" />
         </button>
-
-        <!-- Cart Icon -->
         <button aria-label="Cart">
           <img class="2xl:w-fit xl:w-[20px]  md:w-[12px] w-[16px]" src="../../assets/svg/ash-cart-light.svg" alt="" />
         </button>
-
-        <!-- Sign In Button -->
         <div class="md:flex hidden">
           <B-button @click="router.push('/sign-in')"> Sign In </B-button>
         </div>
       </div>
     </div>
+
+    <!-- Mobile Sidebar -->
+    <transition name="fade">
+      <div v-if="isMobileMenuOpen" class="fixed inset-0 z-50 bg-white p-6 overflow-y-auto">
+        <!-- Close Btn -->
+        <button class="absolute top-6 right-6 text-red-500" @click="isMobileMenuOpen = false">
+          ✕
+        </button>
+
+        <!-- Links -->
+        <div class="space-y-6 mt-10">
+          <router-link to="/" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">Home</router-link>
+          <router-link to="/about" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">About Us</router-link>
+
+          <!-- Properties (collapsible) -->
+          <div>
+            <button @click="isMobilePropertiesOpen = !isMobilePropertiesOpen"
+              class="flex items-center justify-between w-full text-lg font-medium text-neutral-8">
+              Properties
+              <span :class="isMobilePropertiesOpen ? 'rotate-180' : ''" class="transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </button>
+            <div v-if="isMobilePropertiesOpen" class="mt-2 ml-4 space-y-3">
+              <router-link to="/properties/rent" class="block text-neutral-6" @click="isMobileMenuOpen = false">Rent a
+                House</router-link>
+              <router-link to="/properties/buy" class="block text-neutral-6" @click="isMobileMenuOpen = false">Buy a
+                House</router-link>
+              <router-link to="/properties/shortlet" class="block text-neutral-6"
+                @click="isMobileMenuOpen = false">Shortlet (Air BNB)</router-link>
+            </div>
+          </div>
+
+          <router-link to="/products" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">Products</router-link>
+          <router-link to="/interior-design" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">Interior Design</router-link>
+          <router-link to="/consultations" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">Consultations</router-link>
+          <router-link to="/contact" class="block text-lg font-medium text-neutral-8"
+            @click="isMobileMenuOpen = false">Contact Us</router-link>
+        </div>
+
+        <!-- Sign In Button at bottom -->
+        <div class="mt-10">
+          <B-button class="w-full" @click="isMobileMenuOpen = false; router.push('/sign-in')">
+            Sign In
+          </B-button>
+        </div>
+      </div>
+    </transition>
+
   </nav>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-const router = useRouter()
 
+const router = useRouter()
 const route = useRoute()
+
+const isMobileMenuOpen = ref(false)
+const isMobilePropertiesOpen = ref(false)
 
 const isPropertiesActive = computed(() =>
   route.path.startsWith('/properties')
@@ -95,65 +152,13 @@ const isPropertiesActive = computed(() =>
 </script>
 
 <style scoped>
-/* Custom color utilities */
-.text-primary-5 {
-  color: var(--color-primary-5);
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 
-.text-primary-6 {
-  color: var(--color-primary-6);
-}
-
-.bg-primary-5 {
-  background-color: var(--color-primary-5);
-}
-
-.bg-primary-6 {
-  background-color: var(--color-primary-6);
-}
-
-.hover\:bg-primary-6:hover {
-  background-color: var(--color-primary-6);
-}
-
-.hover\:text-primary-5:hover {
-  color: var(--color-primary-5);
-}
-
-.text-neutral-4 {
-  color: var(--color-neutral-4);
-}
-
-.text-neutral-6 {
-  color: var(--color-neutral-6);
-}
-
-.text-neutral-8 {
-  color: var(--color-neutral-8);
-}
-
-.hover\:text-neutral-6:hover {
-  color: var(--color-neutral-6);
-}
-
-.border-neutral-1 {
-  border-color: var(--color-neutral-1);
-}
-
-router-link,
-a,
-.anchor {
-  font-family: 'Campton', sans-serif;
-  font-weight: 600;
-  /* font-size: 1px; */
-  /* line-height: 30px; */
-  letter-spacing: 0%;
-}
-
-a.router-link-active.router-link-exact-active {
-  background: var(--color-primary-5);
-  color: var(--color-primary-0);
-  padding: 8px 12px;
-  border-radius: 4px;
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

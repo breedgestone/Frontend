@@ -73,9 +73,10 @@
             pauseOnMouseEnter: true,
           }">
             <swiper-slide v-for="item in testimonials">
-              <div class="flex 2xl:flex-row flex-col items-start gap-2">
+              <div class="flex 2xl:flex-row flex-col items-start gap-2 h-full w-full">
 
-                <div class="cursor-pointer max-w-md w-full  h-[434px] bg-white shadow hover:shadow-lg transition">
+                <div
+                  class="cursor-pointer w-full 2xl:max-w-md h-[434px] bg-white shadow hover:shadow-lg transition flex-1">
                   <div class="relative">
                     <img :src="`/svg/house2.svg`" alt="property.title" class="w-full lg:h-[282px] h-40 object-cover" />
 
@@ -109,7 +110,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="max-w-md flex flex-col gap-2 justify-center w-full p-4 bg-primary-0 sm:h-[434px] h-fit">
+                <div
+                  class="flex flex-col gap-2 justify-center w-full 2xl:max-w-md p-4 bg-primary-0 sm:h-[434px] h-fit flex-1">
                   <StarRating unratedColor="#eee" color="#1C55E0" :modelValue="4" />
                   <p class="sm:text-sm text-xs text-neutral-5">The team took time to understand our vision and delivered
                     a sleek, professional
