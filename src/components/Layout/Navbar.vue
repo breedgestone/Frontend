@@ -161,4 +161,21 @@ const isPropertiesActive = computed(() =>
 .fade-leave-to {
   opacity: 0;
 }
+
+
+router-link,
+a {
+  font-family: 'Campton', sans-serif;
+  font-weight: 600;
+  /* font-size: 1px; */
+  /* line-height: 30px; */
+  letter-spacing: 0%;
+}
+
+a.router-link-active.router-link-exact-active {
+  background: var(--color-primary-5);
+  color: var(--color-primary-0);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
 </style>

@@ -4,18 +4,39 @@
         <section class="bg-white">
             <div class="max-w-7xl mx-auto md:px-12 px-4 py-8">
                 <!-- Breadcrumb -->
-                <nav class="flex mb-6 text-sm text-neutral-4">
-                    <router-link to="/" class="hover:text-primary-5">Home</router-link>
-                    <span class="mx-2">/</span>
-                    <router-link to="/properties" class="hover:text-primary-5">Properties</router-link>
-                    <span class="mx-2">/</span>
-                    <span class="text-neutral-6 font-medium">{{ property.title }}</span>
-                </nav>
-
+                <div>
+                    <button class="flex items-center gap-2">
+                        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.613099 6.78973C0.425627 6.97726 0.320312 7.23156 0.320312 7.49673C0.320312 7.76189 0.425628 8.0162 0.613099 8.20373L6.2701 13.8607C6.36235 13.9562 6.47269 14.0324 6.59469 14.0848C6.7167 14.1372 6.84792 14.1648 6.9807 14.166C7.11348 14.1671 7.24516 14.1418 7.36805 14.0915C7.49095 14.0413 7.6026 13.967 7.69649 13.8731C7.79039 13.7792 7.86464 13.6676 7.91492 13.5447C7.9652 13.4218 7.9905 13.2901 7.98935 13.1573C7.9882 13.0245 7.96061 12.8933 7.9082 12.7713C7.85579 12.6493 7.77961 12.539 7.6841 12.4467L3.7341 8.49673L16.9771 8.49673C17.2423 8.49673 17.4967 8.39137 17.6842 8.20383C17.8717 8.0163 17.9771 7.76194 17.9771 7.49673C17.9771 7.23151 17.8717 6.97716 17.6842 6.78962C17.4967 6.60208 17.2423 6.49673 16.9771 6.49673L3.7341 6.49673L7.6841 2.54673C7.86626 2.35812 7.96705 2.10552 7.96477 1.84333C7.96249 1.58113 7.85732 1.33032 7.67192 1.14491C7.48651 0.959501 7.2357 0.854331 6.9735 0.852052C6.7113 0.849774 6.4587 0.950568 6.2701 1.13273L0.613099 6.78973Z"
+                                fill="#333333" />
+                        </svg>
+                        Go back
+                    </button>
+                </div>
+                <div class="flex w-full items-center justify-between">
+                    <h1 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6">
+                        {{ property.title }}
+                    </h1>
+                    <p class="text-2xl lg:text-3xl font-bold font-campton text-primary-5">
+                        ₦{{ formatPrice(property.price) }}
+                        <span class="text-sm text-neutral-4 font-normal" v-if="property.type === 'Rent'">
+                            /month
+                        </span>
+                    </p>
+                </div>
+                <Tabs :tabs="videosOrPhotos" :activeTab="activeTabForvideosOrPhotos"
+                    @update:activeTab="activeTabForvideosOrPhotos = $event" />
                 <!-- Property Images -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="flex gap-4">
+                        <img v-for="(image, index) in property.images.slice(0, 4)" :key="index" :src="image"
+                            :alt="`${property.title} - Image ${index + 1}`"
+                            class="w-full h-28 lg:h-36 object-cover rounded-lg cursor-pointer hover:opacity-80 transition"
+                            :class="{ 'ring-2 ring-primary-5': activeImage === image }" @click="activeImage = image" />
+                    </div>
                     <!-- Main Image -->
-                    <div class="lg:col-span-2 relative">
+                    <div class="relative">
                         <img :src="activeImage" :alt="property.title"
                             class="w-full h-96 lg:h-[500px] object-cover rounded-lg shadow-lg cursor-pointer"
                             @click="openImageModal" />
@@ -26,216 +47,18 @@
                     </div>
 
                     <!-- Thumbnail Grid -->
-                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
-                        <img v-for="(image, index) in property.images.slice(0, 4)" :key="index" :src="image"
-                            :alt="`${property.title} - Image ${index + 1}`"
-                            class="w-full h-28 lg:h-36 object-cover rounded-lg cursor-pointer hover:opacity-80 transition"
-                            :class="{ 'ring-2 ring-primary-5': activeImage === image }" @click="activeImage = image" />
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Property Details Section -->
-        <section class="bg-primary-0 py-12">
-            <div class="max-w-7xl mx-auto md:px-12 px-4">
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column - Property Info -->
-                    <div class="lg:col-span-2">
-                        <!-- Property Header -->
-                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                            <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
-                                <div>
-                                    <span
-                                        class="inline-block bg-primary-1 text-primary-5 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-                                        For {{ property.type }}
-                                    </span>
-                                    <h1 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6">
-                                        {{ property.title }}
-                                    </h1>
-                                    <p class="text-neutral-5 mt-2 flex items-center">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        {{ property.location }}
-                                    </p>
-                                </div>
-                                <div class="text-right mt-4 sm:mt-0">
-                                    <p class="text-2xl lg:text-3xl font-bold font-campton text-primary-5">
-                                        ₦{{ formatPrice(property.price) }}
-                                        <span class="text-sm text-neutral-4 font-normal"
-                                            v-if="property.type === 'Rent'">
-                                            /month
-                                        </span>
-                                    </p>
-                                    <p class="text-sm text-neutral-4">{{ property.category }} Property</p>
-                                </div>
-                            </div>
 
-                            <!-- Property Features -->
-                            <div class="flex flex-wrap gap-6 pt-4 border-t border-neutral-2">
-                                <div class="flex items-center gap-2">
-                                    <img src="/svg/house1.svg" alt="Bedrooms" class="w-6 h-6" />
-                                    <span class="text-neutral-5 text-sm">{{ property.beds }} Bedrooms</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="/svg/house2.svg" alt="Bathrooms" class="w-6 h-6" />
-                                    <span class="text-neutral-5 text-sm">{{ property.baths }} Bathrooms</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-6 h-6 text-neutral-5" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2m-6 12V10m0 0V8a2 2 0 00-2-2H8a2 2 0 00-2 2v2m8 0V8">
-                                        </path>
-                                    </svg>
-                                    <span class="text-neutral-5 text-sm">{{ property.sqft || '2,500' }} sqft</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-6 h-6 text-neutral-5" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 8h6m-6 4h6"></path>
-                                    </svg>
-                                    <span class="text-neutral-5 text-sm">Parking Available</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                            <h2 class="text-xl font-bold font-campton text-neutral-6 mb-4">Description</h2>
-                            <p class="text-neutral-5 leading-relaxed mb-4">
-                                {{ property.description || `This stunning ${property.beds}-bedroom property offers the
-                                perfect blend of modern comfort and elegant design. Located in the heart of
-                                ${property.location}, this home features spacious living areas, premium finishes, and
-                                thoughtful layouts designed for contemporary living.` }}
-                            </p>
-                            <div class="space-y-2 text-sm text-neutral-5">
-                                <p>✓ Premium location with easy access to major roads</p>
-                                <p>✓ Modern kitchen with high-end appliances</p>
-                                <p>✓ Spacious bedrooms with built-in wardrobes</p>
-                                <p>✓ Secure parking and 24/7 security</p>
-                                <p>✓ Close to schools, hospitals, and shopping centers</p>
-                            </div>
-                        </div>
-
-                        <!-- Amenities -->
-                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                            <h2 class="text-xl font-bold font-campton text-neutral-6 mb-4">Key Features & Amenities</h2>
-                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div v-for="amenity in amenities" :key="amenity" class="flex items-center gap-2">
-                                    <div class="w-2 h-2 bg-primary-5 rounded-full"></div>
-                                    <span class="text-neutral-5 text-sm">{{ amenity }}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location Map -->
-                        <div class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-xl font-bold font-campton text-neutral-6 mb-4">Location</h2>
-                            <div class="bg-neutral-1 rounded-lg h-64 flex items-center justify-center">
-                                <div class="text-center text-neutral-4">
-                                    <svg class="w-12 h-12 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <p class="text-sm">Interactive Map</p>
-                                    <p class="text-xs">{{ property.location }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Contact & Actions -->
-                    <div class="lg:col-span-1">
-                        <!-- Contact Card -->
-                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6 sticky top-8">
-                            <div class="text-center mb-6">
-                                <div
-                                    class="w-16 h-16 bg-primary-1 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <span class="text-primary-5 font-bold text-xl">{{ getInitials(agent.name) }}</span>
-                                </div>
-                                <h3 class="font-bold text-neutral-6">{{ agent.name }}</h3>
-                                <p class="text-sm text-neutral-4">{{ agent.title }}</p>
-                                <div class="flex items-center justify-center gap-1 mt-2">
-                                    <StarRating :modelValue="agent.rating" color="#1C55E0" unratedColor="#eee" />
-                                    <span class="text-xs text-neutral-4 ml-1">({{ agent.reviews }} reviews)</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <button @click="contactAgent"
-                                    class="w-full bg-primary-5 text-white py-3 rounded-lg font-semibold hover:bg-primary-6 transition">
-                                    Contact Agent
-                                </button>
-
-                                <button @click="scheduleViewing"
-                                    class="w-full border border-primary-5 text-primary-5 py-3 rounded-lg font-semibold hover:bg-primary-1 transition">
-                                    Schedule Viewing
-                                </button>
-
-                                <button @click="toggleWishlist"
-                                    class="w-full border border-neutral-3 text-neutral-5 py-3 rounded-lg font-semibold hover:bg-neutral-1 transition flex items-center justify-center gap-2">
-                                    <svg :class="isWishlisted ? 'fill-red-500 text-red-500' : 'text-neutral-5'"
-                                        class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                    {{ isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist' }}
-                                </button>
-                            </div>
-
-                            <div class="mt-6 pt-6 border-t border-neutral-2">
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-sm text-neutral-4">Property ID:</span>
-                                    <span class="text-sm font-medium text-neutral-6">#{{ property.id }}</span>
-                                </div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <span class="text-sm text-neutral-4">Listed:</span>
-                                    <span class="text-sm text-neutral-6">{{ formatDate(property.listedDate) }}</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-neutral-4">Type:</span>
-                                    <span class="text-sm text-neutral-6">{{ property.type }}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Quick Stats -->
-                        <div class="bg-white rounded-lg shadow-lg p-6">
-                            <h3 class="font-bold text-neutral-6 mb-4">Property Statistics</h3>
-                            <div class="space-y-3">
-                                <div class="flex justify-between">
-                                    <span class="text-sm text-neutral-4">Views this month:</span>
-                                    <span class="text-sm font-medium text-neutral-6">{{ Math.floor(Math.random() * 200)
-                                        + 50 }}</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm text-neutral-4">Times favorited:</span>
-                                    <span class="text-sm font-medium text-neutral-6">{{ Math.floor(Math.random() * 50) +
-                                        10 }}</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm text-neutral-4">Price per sqft:</span>
-                                    <span class="text-sm font-medium text-neutral-6">₦{{ Math.floor(property.price /
-                                        2500).toLocaleString() }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Similar Properties -->
         <section class="bg-white py-12">
             <div class="max-w-7xl mx-auto md:px-12 px-4">
                 <h2 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6 mb-8">
-                    Similar Properties
+                    Recommended for you
                 </h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     <PropertyCard v-for="similarProperty in similarProperties" :key="similarProperty.id"
@@ -243,7 +66,29 @@
                 </div>
             </div>
         </section>
-
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto md:px-12 px-4">
+                <p class="font-semibold text-center text-neutral-9 uppercase mb-2 tracking-wide">
+                    GET ALL THE ANSWERS TO YOUR QUESTIONS
+                </p>
+                <h2 class="font-campton text-center lg:text-3xl xl:text-4xl text-2xl font-bold mb-8">
+                    Frequently Asked Questions
+                </h2>
+                <div
+                    class="w-full flex flex-col xl:flex-row xl:gap-12 gap-6 items-center xl:items-start justify-center">
+                    <!-- FAQ List -->
+                    <div class="w-full xl:w-1/2 flex flex-col gap-4">
+                        <FaqAccordion v-for="(faq, i) in faqs.slice(0, Math.ceil(faqs.length / 2))" :key="faq.question"
+                            :faq="faq" :active="activeFaq === i" @toggle="activeFaq = activeFaq === i ? null : i" />
+                    </div>
+                    <div class="w-full xl:w-1/2 flex flex-col gap-4">
+                        <FaqAccordion v-for="(faq, i) in faqs.slice(Math.ceil(faqs.length / 2))" :key="faq.question"
+                            :faq="faq" :active="activeFaq === i + Math.ceil(faqs.length / 2)"
+                            @toggle="activeFaq = activeFaq === i + Math.ceil(faqs.length / 2) ? null : i + Math.ceil(faqs.length / 2)" />
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Image Modal -->
         <div v-if="showImageModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
             @click="closeImageModal">
@@ -272,7 +117,9 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import PropertyCard from '@/components/PropertyCard.vue'
 import StarRating from '@/components/StarRating.vue'
+import FaqAccordion from '@/components/FaqAccordion.vue'
 import { dummy } from '../../dummy'
+import Tabs from '@/components/Tabs.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -282,11 +129,12 @@ const activeImage = ref('')
 const showImageModal = ref(false)
 const modalImage = ref('')
 const isWishlisted = ref(false)
-
+const videosOrPhotos = ref(['videos', 'photos'])
+const activeTabForvideosOrPhotos = ref('videos');
 // Mock property data - in real app, fetch by route.params.id
 const property = ref({
     id: route.params.id || 1,
-    title: '6 Bedroom Detached Duplex With Rooftop Terrace',
+    title: '6 Bedroom Detached Duplex',
     location: 'Abuja, Nigeria',
     price: 85000000,
     type: 'Buy',
@@ -338,7 +186,39 @@ const similarProperties = computed(() => {
         p.id !== property.value.id
     ).slice(0, 4)
 })
-
+const faqs = [
+    {
+        question: "How do you ensure trust?",
+        answer: "Breedgestone builds trust by verifying agents, detecting fraud, and allowing community ratings, ensuring every user enjoys a safe, reliable experience online.",
+        icon: "../../assets/svg/faq-trust.svg"
+    },
+    {
+        question: "Can I buy furniture here?",
+        answer: "Yes, you can browse and purchase furniture directly from our marketplace.",
+        icon: "../../assets/svg/faq-furniture.svg"
+    },
+    {
+        question: "Is it optimized for low data?",
+        answer: "Our platform is designed to work efficiently even on low data connections.",
+        icon: "../../assets/svg/faq-data.svg"
+    },
+    {
+        question: "What makes Breedgestone different?",
+        answer: "We combine verified listings, expert support, and a seamless experience for buyers and renters.",
+        icon: "../../assets/svg/faq-different.svg"
+    },
+    {
+        question: "How does AI search work?",
+        answer: "Our AI search matches you with the best properties based on your preferences and needs.",
+        icon: "../../assets/svg/faq-ai.svg"
+    },
+    {
+        question: "What payment methods are supported?",
+        answer: "We support multiple secure payment options for your convenience.",
+        icon: "../../assets/svg/faq-payment.svg"
+    }
+];
+const activeFaq = ref(0)
 // Methods
 const formatPrice = (price) => {
     return new Intl.NumberFormat('en-NG').format(price)
