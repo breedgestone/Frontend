@@ -4,31 +4,34 @@
         <section class="bg-white">
             <div class="max-w-7xl mx-auto md:px-12 px-4 py-8">
                 <!-- Breadcrumb -->
-                <div>
-                    <button class="flex items-center gap-2">
-                        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M0.613099 6.78973C0.425627 6.97726 0.320312 7.23156 0.320312 7.49673C0.320312 7.76189 0.425628 8.0162 0.613099 8.20373L6.2701 13.8607C6.36235 13.9562 6.47269 14.0324 6.59469 14.0848C6.7167 14.1372 6.84792 14.1648 6.9807 14.166C7.11348 14.1671 7.24516 14.1418 7.36805 14.0915C7.49095 14.0413 7.6026 13.967 7.69649 13.8731C7.79039 13.7792 7.86464 13.6676 7.91492 13.5447C7.9652 13.4218 7.9905 13.2901 7.98935 13.1573C7.9882 13.0245 7.96061 12.8933 7.9082 12.7713C7.85579 12.6493 7.77961 12.539 7.6841 12.4467L3.7341 8.49673L16.9771 8.49673C17.2423 8.49673 17.4967 8.39137 17.6842 8.20383C17.8717 8.0163 17.9771 7.76194 17.9771 7.49673C17.9771 7.23151 17.8717 6.97716 17.6842 6.78962C17.4967 6.60208 17.2423 6.49673 16.9771 6.49673L3.7341 6.49673L7.6841 2.54673C7.86626 2.35812 7.96705 2.10552 7.96477 1.84333C7.96249 1.58113 7.85732 1.33032 7.67192 1.14491C7.48651 0.959501 7.2357 0.854331 6.9735 0.852052C6.7113 0.849774 6.4587 0.950568 6.2701 1.13273L0.613099 6.78973Z"
-                                fill="#333333" />
-                        </svg>
-                        Go back
-                    </button>
+                <div class="flex flex-col gap-8">
+                    <div>
+                        <button class="flex items-center gap-2">
+                            <svg width="18" height="15" viewBox="0 0 18 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.613099 6.78973C0.425627 6.97726 0.320312 7.23156 0.320312 7.49673C0.320312 7.76189 0.425628 8.0162 0.613099 8.20373L6.2701 13.8607C6.36235 13.9562 6.47269 14.0324 6.59469 14.0848C6.7167 14.1372 6.84792 14.1648 6.9807 14.166C7.11348 14.1671 7.24516 14.1418 7.36805 14.0915C7.49095 14.0413 7.6026 13.967 7.69649 13.8731C7.79039 13.7792 7.86464 13.6676 7.91492 13.5447C7.9652 13.4218 7.9905 13.2901 7.98935 13.1573C7.9882 13.0245 7.96061 12.8933 7.9082 12.7713C7.85579 12.6493 7.77961 12.539 7.6841 12.4467L3.7341 8.49673L16.9771 8.49673C17.2423 8.49673 17.4967 8.39137 17.6842 8.20383C17.8717 8.0163 17.9771 7.76194 17.9771 7.49673C17.9771 7.23151 17.8717 6.97716 17.6842 6.78962C17.4967 6.60208 17.2423 6.49673 16.9771 6.49673L3.7341 6.49673L7.6841 2.54673C7.86626 2.35812 7.96705 2.10552 7.96477 1.84333C7.96249 1.58113 7.85732 1.33032 7.67192 1.14491C7.48651 0.959501 7.2357 0.854331 6.9735 0.852052C6.7113 0.849774 6.4587 0.950568 6.2701 1.13273L0.613099 6.78973Z"
+                                    fill="#333333" />
+                            </svg>
+                            Go back
+                        </button>
+                    </div>
+                    <div class="flex w-full items-center justify-between">
+                        <h1 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6">
+                            {{ property.title }}
+                        </h1>
+                        <p class="text-2xl lg:text-3xl font-bold font-campton text-primary-5">
+                            ₦{{ formatPrice(property.price) }}
+                            <span class="text-sm text-neutral-4 font-normal" v-if="property.type === 'Rent'">
+                                /month
+                            </span>
+                        </p>
+                    </div>
+                    <Tabs :tabs="videosOrPhotos" :activeTab="activeTabForvideosOrPhotos"
+                        @update:activeTab="activeTabForvideosOrPhotos = $event" />
                 </div>
-                <div class="flex w-full items-center justify-between">
-                    <h1 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6">
-                        {{ property.title }}
-                    </h1>
-                    <p class="text-2xl lg:text-3xl font-bold font-campton text-primary-5">
-                        ₦{{ formatPrice(property.price) }}
-                        <span class="text-sm text-neutral-4 font-normal" v-if="property.type === 'Rent'">
-                            /month
-                        </span>
-                    </p>
-                </div>
-                <Tabs :tabs="videosOrPhotos" :activeTab="activeTabForvideosOrPhotos"
-                    @update:activeTab="activeTabForvideosOrPhotos = $event" />
                 <!-- Property Images -->
-                <div class="flex flex-col gap-4 mb-8">
+                <div class="flex flex-col gap-4 my-8">
                     <div class="flex gap-4">
                         <img v-for="(image, index) in property.images.slice(0, 4)" :key="index" :src="image"
                             :alt="`${property.title} - Image ${index + 1}`"
@@ -60,7 +63,7 @@
                 <h2 class="text-2xl lg:text-3xl font-bold font-campton text-neutral-6 mb-8">
                     Recommended for you
                 </h2>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 font-poppins">
                     <PropertyCard v-for="similarProperty in similarProperties" :key="similarProperty.id"
                         :property="similarProperty" @click="goToProperty(similarProperty.id)" />
                 </div>
