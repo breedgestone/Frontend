@@ -56,8 +56,8 @@
                     <span>{{ property.baths }} Baths</span>
                 </div>
                 <div class="flex gap-2 flex-row items-center">
-                    <img class="xl:w-[28px] xl:h-[28px] w-[21px] h-[21px]" src="../assets/svg/sink.svg" alt="" />
-                    <span>{{ property.size }} Baths</span>
+                    <img class="xl:w-[28px] xl:h-[28px] w-[21px] h-[21px]" src="../assets/svg/area.svg" alt="" />
+                    <span>{{ property.size }} Square Feet</span>
                 </div>
             </div>
         </div>

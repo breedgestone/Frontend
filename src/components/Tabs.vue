@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-wrap gap-4 bg-primary-0-5/50 px-4 py-2 rounded-lg w-fit focus:border-primary-0-5/50 focus:ring-primary-0-5/50">
+        class="flex flex-wrap gap-4 bg-primary-0-5/50 px-4 py-2 rounded-lg sm:w-fit w-full justify-between focus:border-primary-0-5/50 focus:ring-primary-0-5/50">
         <button v-for="tab in tabs" :key="tab" @click="$emit('update:activeTab', tab)" :class="[
             'sm:px-5 px-3 py-2 rounded-[6px] font-medium transition',
             activeTab === tab
