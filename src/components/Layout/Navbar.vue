@@ -16,13 +16,12 @@
       <!-- Center: Nav Links (desktop only) -->
       <div class="hidden md:flex xl:space-x-6 lg:space-x-4 space-x-3 items-center">
         <router-link to="/"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Home</router-link>
-        <router-link to="/about"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">About
+          class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">Home</router-link>
+        <router-link to="/about" class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">About
           Us</router-link>
-        <div class="relative group">
-          <button :class="isPropertiesActive ? 'bg-primary-5 text-primary-0 px-3 py-2 rounded' : 'text-neutral-6'"
-            class="anchor 2xl:text-lg text-[10px] xl:text-sm font-medium  hover:text-primary-1 flex items-center">
+        <div class="relative group ">
+          <button :class="isPropertiesActive ? 'bg-primary-5  text-primary-0 px-3 py-2 rounded' : 'text-neutral-6'"
+            class=" navbar_properties 2xl:text-lg text-[10px] xl:text-sm   hover:text-primary-2 flex items-center">
             Properties
             <svg class="w-3 h-3 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
               stroke-width="2" viewBox="0 0 24 24">
@@ -47,19 +46,19 @@
         </div>
 
         <router-link to="/products"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Products</router-link>
+          class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">Products</router-link>
         <router-link to="/interior-design"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Interior
+          class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">Interior
           Design</router-link>
         <router-link to="/consultations"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Consultations</router-link>
+          class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">Consultations</router-link>
         <router-link to="/contact"
-          class="2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6 hover:text-primary-2">Contact
+          class="2xl:text-lg text-[10px] xl:text-sm  text-neutral-6 hover:text-primary-2">Contact
           Us</router-link>
       </div>
 
       <div class="md:hidden flex">
-        <p class="capitalize 2xl:text-lg text-[10px] xl:text-sm font-medium text-neutral-6">
+        <p class="capitalize 2xl:text-lg text-[10px] xl:text-sm  text-neutral-6">
           {{ router.currentRoute.value.name }}
         </p>
       </div>
@@ -88,15 +87,14 @@
 
         <!-- Links -->
         <div class="space-y-6 mt-10">
-          <router-link to="/" class="block text-lg font-medium text-neutral-8"
-            @click="isMobileMenuOpen = false">Home</router-link>
-          <router-link to="/about" class="block text-lg font-medium text-neutral-8"
-            @click="isMobileMenuOpen = false">About Us</router-link>
+          <router-link to="/" class="block text-lg  text-neutral-8" @click="isMobileMenuOpen = false">Home</router-link>
+          <router-link to="/about" class="block text-lg  text-neutral-8" @click="isMobileMenuOpen = false">About
+            Us</router-link>
 
           <!-- Properties (collapsible) -->
           <div>
             <button @click="isMobilePropertiesOpen = !isMobilePropertiesOpen"
-              class="flex items-center justify-between w-full text-lg font-medium text-neutral-8">
+              class="flex items-center justify-between w-full text-lg  text-neutral-8">
               Properties
               <span :class="isMobilePropertiesOpen ? 'rotate-180' : ''" class="transition-transform">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -114,14 +112,14 @@
             </div>
           </div>
 
-          <router-link to="/products" class="block text-lg font-medium text-neutral-8"
+          <router-link to="/products" class="block text-lg  text-neutral-8"
             @click="isMobileMenuOpen = false">Products</router-link>
-          <router-link to="/interior-design" class="block text-lg font-medium text-neutral-8"
+          <router-link to="/interior-design" class="block text-lg  text-neutral-8"
             @click="isMobileMenuOpen = false">Interior Design</router-link>
-          <router-link to="/consultations" class="block text-lg font-medium text-neutral-8"
+          <router-link to="/consultations" class="block text-lg  text-neutral-8"
             @click="isMobileMenuOpen = false">Consultations</router-link>
-          <router-link to="/contact" class="block text-lg font-medium text-neutral-8"
-            @click="isMobileMenuOpen = false">Contact Us</router-link>
+          <router-link to="/contact" class="block text-lg  text-neutral-8" @click="isMobileMenuOpen = false">Contact
+            Us</router-link>
         </div>
 
         <!-- Sign In Button at bottom -->
@@ -177,5 +175,10 @@ a.router-link-active.router-link-exact-active {
   color: var(--color-primary-0);
   padding: 8px 12px;
   border-radius: 4px;
+}
+
+button.navbar_properties {
+  font-family: 'Campton', sans-serif;
+  font-weight: 600;
 }
 </style>
