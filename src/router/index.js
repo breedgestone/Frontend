@@ -16,8 +16,8 @@ const Consultations = () => import('@/views/Breedgestone/Consultation.vue')
 const Products = () => import('@/views/Breedgestone/Products/Index.vue')
 const ProductDetails = () => import('@/views/Breedgestone/Products/_Id.vue')
 const InteriorDesign = () => import('@/views/Breedgestone/InteriorDesign.vue')
-// const Login = () => import('@/views/Auth/Login.vue')
-// const Register = () => import('@/views/Auth/Register.vue')
+const Login = () => import('@/views/Auth/Login.vue')
+const Register = () => import('@/views/auth/Register.vue')
 const UserDashboardHome = () => import('@/views/UserDashboard/index.vue')
 const AdminHome = () => import('@/views/Admin/index.vue')
 
@@ -61,6 +61,16 @@ const routes = [
     path: '/admin',
     component: AdminLayout,
     children: [{ path: '', name: 'admin-dashboard', component: AdminHome }],
+  },
+  {
+    path: '/login',
+    component: Login,
+    name: 'Login',
+  },
+  {
+    path: '/signup',
+    component: Register,
+    name: 'Register',
   },
 ]
 
