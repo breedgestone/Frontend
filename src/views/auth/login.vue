@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center h-screen  w-full font-poppins">
-    <div
-      class="lg:w-3/4 md:w-1/2 h-full md:flex hidden   bg-center bg-no-repeat relative lg:bg-cover lg:bg-[url('/svg/loginBg.svg')]">
+    <div :class="[!passwordScreen ? `bg-[url('/svg/loginBg.svg')]` : `bg-[url('/svg/loginPassword.svg')]`]"
+      class="lg:w-3/4 md:w-1/2 h-full md:flex hidden   bg-center bg-no-repeat relative lg:bg-cover ">
     </div>
     <div
       class="lg:w-1/4 relative sm:min-w-[500px] overflow-y-auto p-4 min-w-full md:w-1/2 h-full w-full sm:p-8 bg-primary-0">
@@ -10,13 +10,16 @@
         Breedgestone</h2>
       <p class="mt-4 text-neutral-4 font-poppins  max-w-xl">Type your e-mail or phone number to log in or
         create a Breedgestone account.</p>
-      <input type="text" placeholder="*Enter Email or Phone Number"
+      <input v-if="!passwordScreen" v-model="email" type="text" placeholder="*Enter Email or Phone Number"
         class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5 my-8"
         required />
-      <B-button class="w-full">Continue</B-button>
+      <input v-else v-model="password" type="password" placeholder="*Password"
+        class="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 bg-primary-0 text-neutral-9 placeholder-neutral-4 focus:outline-primary-5 my-8"
+        required />
+      <B-button @click="continueToPassword" class="w-full">Continue</B-button>
       <p class="my-8">By continuing you agree to Breedgestone’s <router-link to="">Terms and Condition</router-link></p>
-      <div class=" border-[0.5px] w-full border-[#A0A0A0] mb-8"></div>
-      <div class="flex flex-col items-center gap-4">
+      <div v-if="!passwordScreen" class=" border-[0.5px] w-full border-[#A0A0A0] mb-8"></div>
+      <div class="flex flex-col items-center gap-4" v-if="!passwordScreen">
         <button class="bg-[#1877F2] flex items-center gap-2 justify-center p-2 rounded-sm text-white w-full">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_319_110480)">
@@ -58,9 +61,22 @@
 
       <div class="absolute flex items-center left-0 w-full  justify-between bottom-0 p-4 sm:p-8">
         <img class="w-[100px] h-[21px]" src="../../assets/svg/logo.svg" alt="">
-        <p>©Breedgestone 2025</p>
+        <p class="text-lg  font-campton text-neutral-5 font-bold leading-tight">
+          ©Breedgestone 2025</p>
       </div>
     </div>
   </div>
 
 </template>
+<script setup>
+import { ref } from 'vue';
+
+const passwordScreen = ref(false)
+const email = ref('');
+const password = ref('');
+const continueToPassword = () => {
+  if (email.value.length)
+    passwordScreen.value = true
+  return;
+}
+</script>
