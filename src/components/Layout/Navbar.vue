@@ -72,7 +72,7 @@
           <img class="2xl:w-fit xl:w-[20px]  md:w-[12px] w-[16px]" src="../../assets/svg/ash-cart-light.svg" alt="" />
         </button>
         <div class="md:flex hidden">
-          <B-button @click="router.push('/sign-in')"> Sign In </B-button>
+          <B-button @click="router.push('/login')"> Sign In </B-button>
         </div>
       </div>
     </div>
