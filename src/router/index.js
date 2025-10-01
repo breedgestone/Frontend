@@ -17,7 +17,7 @@ const Products = () => import('@/views/Breedgestone/Products/Index.vue')
 const ProductDetails = () => import('@/views/Breedgestone/Products/_Id.vue')
 const InteriorDesign = () => import('@/views/Breedgestone/InteriorDesign.vue')
 const Login = () => import('@/views/Auth/Login.vue')
-const Register = () => import('@/views/auth/Register.vue')
+const Register = () => import('@/views/Auth/Register.vue')
 const UserDashboardHome = () => import('@/views/UserDashboard/index.vue')
 const AdminHome = () => import('@/views/Admin/index.vue')
 
