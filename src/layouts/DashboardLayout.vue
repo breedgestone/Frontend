@@ -1,9 +1,26 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Sidebar from '@/components/Layout/DashboardLayout/Sidebar.vue'
+import UserDashboardNavbar from '@/components/Layout/DashboardLayout/UserDashboardNavbar.vue';
 
-const isSidebarOpen = ref(false)
+const isSidebarOpen = ref(true);
 
+const handleResize = () => {
+  if (window.innerWidth < 900) {
+    isSidebarOpen.value = false;
+  } else {
+    isSidebarOpen.value = true;
+  }
+};
+
+onMounted(() => {
+  handleResize();
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value
 }
@@ -12,17 +29,11 @@ const toggleSidebar = () => {
 <template>
   <div class="dashboard-layout">
     <!-- Sidebar -->
-    <Sidebar :class="['sidebar', { 'sidebar-open': isSidebarOpen }]" />
+    <Sidebar v-if="isSidebarOpen" @close="toggleSidebar" :class="['sidebar', { 'sidebar-open': isSidebarOpen }]" />
 
     <!-- Main Content -->
     <main class="content">
-      <header class="header">
-        <!-- Mobile menu button -->
-        <button class="menu-btn md:hidden" @click="toggleSidebar">
-          <img src="" alt="menu" class="w-6 h-6" />
-        </button>
-        <h1>Dashboard Header</h1>
-      </header>
+      <UserDashboardNavbar :showLogo="isSidebarOpen ? false : true" />
 
       <router-view />
     </main>
@@ -38,13 +49,12 @@ const toggleSidebar = () => {
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
-  background: #f2f2f2;
+  background: #F8FAFC;
   transition: transform 0.3s ease;
 }
 
 /* By default, hide sidebar on mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .sidebar {
     position: fixed;
     top: 0;

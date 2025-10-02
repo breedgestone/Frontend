@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import userDashboardRoutes from './userDashboardRoutes.js'
 // Lazy-loaded Layouts
 const DefaultLayout = () => import('@/layouts/DefaultLayout.vue')
 const AuthLayout = () => import('@/layouts/AuthLayout.vue')
@@ -55,7 +55,7 @@ const routes = [
   {
     path: '/user/dashboard',
     component: DashboardLayout,
-    children: [{ path: '', name: 'user-dashboard', component: UserDashboardHome }],
+    children: userDashboardRoutes,
   },
   {
     path: '/admin',

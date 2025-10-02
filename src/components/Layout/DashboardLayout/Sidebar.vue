@@ -1,11 +1,11 @@
 <template>
-    <aside class="w-72 bg-white border-r border-neutral-1 h-screen flex flex-col">
+    <aside class="lg:w-78 sm:w-68 w-full bg-white border-r border-neutral-1 h-screen flex-col">
         <!-- Logo + Close (mobile only) -->
         <div class="flex items-center justify-between px-6 py-4 border-b border-neutral-1">
             <button class="flex items-center space-x-2 cursor-pointer" @click="router.push('/')">
                 <img class="w-[118px] h-[19px]" src="@/assets/svg/logo.svg" alt="Breedgestone" />
             </button>
-            <button class="md:hidden" @click="$emit('close')">
+            <button class="" @click="$emit('close')">
                 ✕
             </button>
         </div>
@@ -28,9 +28,10 @@
                         class="flex items-center justify-between px-3 py-2 rounded-md text-neutral-6 hover:text-primary-2 hover:bg-primary-50"
                         :class="route.path === item.to ? 'bg-primary-50 text-primary-6 font-semibold' : ''">
                         <div class="flex items-center space-x-3">
-                            <img src="" alt="" class="w-5 h-5" />
+                            <img :src="route.path === item.to ? item.activeIcon : item.icon" alt="" class="w-5 h-5" />
                             <span class="2xl:text-lg text-sm">{{ item.label }}</span>
                         </div>
+
                         <span v-if="item.badge" class="text-xs bg-primary-50 text-primary-6 px-2 py-0.5 rounded-full">
                             {{ item.badge }}
                         </span>
@@ -41,7 +42,8 @@
 
         <!-- CTA Card -->
         <div class="px-4 py-6">
-            <div class="bg-gradient-to-br from-primary-5 to-primary-6 rounded-xl p-4 text-white text-center">
+            <div
+                class=" bg-center bg-no-repeat relative bg-cover h-[224px] bg-[url('/svg/sidebar-consultation-bg.svg')] rounded-xl p-4 text-white text-center">
                 <h3 class="font-bold text-base mb-2">Breedgestone Experts</h3>
                 <p class="text-xs opacity-90 mb-4">
                     Unlock the full potential of Breedgestone—book your consultation today!
@@ -69,21 +71,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-
+import navItems from './navItem'
 const router = useRouter()
 const route = useRoute()
 const search = ref('')
 
-const navItems = [
-    { label: 'Overview', to: '/dashboard' },
-    { label: 'Order History', to: '/orders' },
-    { label: 'Wishlist', to: '/wishlist', badge: 8 },
-    { label: 'Shopping Cart', to: '/cart', badge: 4 },
-    { label: 'Messages', to: '/messages', badge: 10 },
-    { label: 'Inspection', to: '/inspection' },
-    { label: 'Consultation', to: '/consultation' },
-    { label: 'Recently Viewed', to: '/recently-viewed' },
-    { label: 'Help Center', to: '/help' },
-    { label: 'Settings', to: '/settings' }
-]
+
+
 </script>
