@@ -34,8 +34,9 @@ const toggleSidebar = () => {
     <!-- Main Content -->
     <main class="content">
       <UserDashboardNavbar :showLogo="isSidebarOpen ? false : true" />
-
-      <router-view />
+      <div class="sm:p-8 p-4">
+        <router-view />
+      </div>
     </main>
   </div>
 </template>

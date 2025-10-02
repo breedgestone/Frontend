@@ -1,12 +1,5 @@
 <template>
-  <component
-    :is="tag"
-    :class="buttonClasses"
-    :disabled="disabled"
-    :type="type"
-    v-bind="$attrs"
-    @click="handleClick"
-  >
+  <component :is="tag" :class="buttonClasses" :disabled="disabled" :type="type" v-bind="$attrs" @click="handleClick">
     <!-- Left Icon -->
     <span v-if="$slots.leftIcon || leftIcon" class="button-icon-left">
       <slot name="leftIcon">
@@ -350,12 +343,12 @@ const buttonClasses = computed(() => {
 
 /* Neutral Color Variants */
 .btn-solid.btn-neutral {
-  background-color: var(--color-neutral-5);
-  color: white;
+  background-color: var(--color-primary-0);
+  color: var(--color-primary-5);
 }
 
 .btn-solid.btn-neutral:hover:not(.btn-disabled) {
-  background-color: var(--color-neutral-6);
+  background-color: var(--color-neutral-2);
 }
 
 .btn-outline.btn-neutral {
